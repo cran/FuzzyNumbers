@@ -1,0 +1,100 @@
+\docType{class}
+\name{FuzzyNumber-class}
+\alias{FuzzyNumber-class}
+\title{S4 class representing a fuzzy number}
+\description{
+  Formally, a fuzzy number \eqn{A} (Dubois, Prade, 1978) is
+  a fuzzy subset of the real line \eqn{R} with membership
+  function \eqn{\mu} given by: \tabular{lll}{ \tab |
+  \eqn{0} \tab if \eqn{x < a1}, \cr \tab |
+  \eqn{left((x-a1)/(a2-a1))} \tab if \eqn{a1 \le x < a2},
+  \cr \eqn{\mu(x)} = \tab | \eqn{1} \tab if \eqn{a2 \le x
+  \le a3}, \cr \tab | \eqn{right((x-a3)/(a4-a3))} \tab if
+  \eqn{a3 < x \le a4}, \cr \tab | \eqn{0} \tab if \eqn{a4 <
+  x}, \cr } where \eqn{a1,a2,a3,a4\in R}, \eqn{a1 \le a2
+  \le a3 \le a4}, \eqn{left: [0,1]\to[0,1]}{left:
+  [0,1]->[0,1]} is a nondecreasing function called the
+  \emph{left side generator of \eqn{A}}, and \eqn{right:
+  [0,1]\to[0,1]}{right: [0,1]->[1,0]} is a nonincreasing
+  function called the \emph{right side generator of
+  \eqn{A}}. \cr Alternatively, it may be shown that each
+  fuzzy number \eqn{A} may be uniquely determined by
+  specifying its \eqn{\alpha}-cuts, \eqn{A(\alpha)}. We
+  have \eqn{A(0)=[a1,a4]} and
+  \deqn{A(\alpha)=[a1+(a2-a1)*lower(\alpha),
+  a3+(a4-a3)*upper(\alpha)]} for \eqn{0<\alpha\le 1}, where
+  \eqn{lower: [0,1]\to[0,1]}{lower: [0,1]->[0,1]} and
+  \eqn{upper: [0,1]\to[0,1]}{upper: [0,1]->[1,0]} are,
+  respectively, strictly increasing and decreasing
+  functions satisfying \eqn{lower(\alpha)=\inf\{x:
+  \mu(x)\ge\alpha\}}{lower(\alpha)=inf(x: \mu(x)\ge\alpha)}
+  and \eqn{upper(\alpha)=\sup\{x:
+  \mu(x)\ge\alpha\}}{upper(\alpha)=sup(x:
+  \mu(x)\ge\alpha)}. \cr Please note that many algorithms
+  that deal with fuzzy numbers often use \eqn{\alpha}-cuts
+  rather than side functions.
+}
+\details{
+  Note that the \pkg{FuzzyNumbers} package also deals with
+  particular types of fuzzy numbers like trapezoidal,
+  piecewise linear, or ``parametric'' FNs (see
+  \code{\link{TrapezoidalFuzzyNumber-class}}
+  \code{\link{PiecewiseLinearFuzzyNumber-class}},
+  \code{\link{PowerFuzzyNumber-class}},
+  \code{\link{DiscontinuousFuzzyNumber-class}})
+}
+\section{Slots}{
+  \describe{ \item{\code{a1}:}{Single numeric value
+  specifying the left bound for the support.}
+  \item{\code{a2}:}{Single numeric value specifying the
+  left bound for the core.} \item{\code{a3}:}{Single
+  numeric value specifying the right bound for the core.}
+  \item{\code{a4}:}{Single numeric value specifying the
+  right bound for the support.} \item{\code{lower}:}{A
+  nondecreasing function [0,1]->[0,1] that gives the lower
+  alpha-cut bound.} \item{\code{upper}:}{A nonincreasing
+  function [0,1]->[1,0] that gives the upper alpha-cut
+  bound.} \item{\code{left}:}{A nondecreasing function
+  [0,1]->[0,1] that gives the left side function.}
+  \item{\code{right}:}{A nonincreasing function
+  [0,1]->[1,0] that gives the right side function.} }
+}
+\examples{
+showClass("FuzzyNumber")
+showMethods(classes="FuzzyNumber")
+}
+\seealso{
+  \code{\link{FuzzyNumber}} for a convenient constructor,
+  \code{\link{convert.side}} for creating side functions
+  generators, \code{\link{convert.alpha}} for creating
+  alpha-cut bounds generators, \code{\link{approx.invert}}
+  for inverting side functions/alpha-cuts numerically
+
+  Other FuzzyNumber.method: \code{\link{alphacut}},
+  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
+  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
+  \code{\link{ambiguity}}, \code{\link{Arithmetic}},
+  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
+  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
+  \code{\link{Arithmetic}}, \code{\link{convert.side}},
+  \code{\link{core}}, \code{\link{distance}},
+  \code{\link{distance}}, \code{\link{distance}},
+  \code{\link{distance}}, \code{\link{evaluate}},
+  \code{\link{expectedInterval}},
+  \code{\link{expectedInterval}},
+  \code{\link{expectedInterval}},
+  \code{\link{expectedInterval}},
+  \code{\link{expectedValue}}, \code{\link{Extract}},
+  \code{\link{Extract}}, \code{\link{Extract}},
+  \code{\link{Extract}}, \code{\link{integrateAlpha}},
+  \code{\link{integrateAlpha}},
+  \code{\link{piecewiseLinearApproximation}},
+  \code{\link{plot}}, \code{\link{plot}},
+  \code{\link{plot}}, \code{\link{show}},
+  \code{\link{show}}, \code{\link{show}},
+  \code{\link{show}}, \code{\link{supp}},
+  \code{\link{trapezoidalApproximation}},
+  \code{\link{value}}, \code{\link{weightedExpectedValue}},
+  \code{\link{width}}
+}
+

@@ -1,0 +1,34 @@
+\name{integrate_discont_val}
+\alias{integrate_discont_val}
+\title{Integrate a function with at most finite number of discontinuities}
+\usage{
+  integrate_discont_val(f, from, to,
+    discontinuities = numeric(0),
+    rel.tol = .Machine$double.eps^0.35, ...)
+}
+\arguments{
+  \item{f}{an R function taking a numeric vector of length
+  1 as its first argument and returning a numeric vector of
+  length 1}
+
+  \item{from}{the lower limit of integration}
+
+  \item{to}{the upper limit of integration}
+
+  \item{discontinuities}{nondecreasingly sorted numeric
+  vector which indicates the points at which \code{f} is
+  discontinuous}
+
+  \item{rel.tol}{relative accuracy requested}
+
+  \item{...}{further arguments to be passed to the
+  \code{\link{integrate}} function.}
+}
+\value{
+  the estimate of the integral
+}
+\description{
+  The function uses multiple calls to
+  \code{\link{integrate}}.
+}
+
