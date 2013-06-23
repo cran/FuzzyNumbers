@@ -2,43 +2,51 @@
 \name{expectedValue}
 \alias{expectedValue}
 \alias{expectedValue,FuzzyNumber-method}
-\title{Calculate the expected value of a fuzzy number (defuzzify)}
-\description{
-  The expected value of \eqn{A} is defined as \eqn{EV_w(A)
-  := EI_U(A) - EI_L(A)}, where \eqn{EI} is the
-  \code{expectedInterval}.
+\title{Calculate the Expected Value of a Fuzzy Number}
+\usage{
+  \S4method{expectedValue}{FuzzyNumber}(object, ...)
 }
-\section{Methods}{
-  \describe{ \item{\code{signature(object =
-  "FuzzyNumber")}}{ } }
+\arguments{
+  \item{object}{a fuzzy number}
+
+  \item{...}{additional arguments passed to
+  \code{\link{expectedInterval}}}
+}
+\value{
+  a single numeric value
+}
+\description{
+  The calculation of the so-called expected value is one of
+  possible methods to deffuzify a fuzzy number.
+}
+\details{
+  The expected value of \eqn{A} is defined as \eqn{EV(A) :=
+  (EI_U(A) + EI_L(A))/2}{EV(A) := (EI_U(A) + EI_L(A))/2},
+  where \eqn{EI} is the \code{\link{expectedInterval}.}
 }
 \seealso{
-  \code{\link{expectedInterval}} on which this function is
-  based, and also \code{\link{weightedExpectedValue}}
+  Other characteristics: \code{\link{ambiguity}},
+  \code{\link{value}}, \code{\link{weightedExpectedValue}},
+  \code{\link{width}}
 
-  Other FuzzyNumber.method: \code{\link{alphacut}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{ambiguity}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{convert.side}},
+  Other deffuzification: \code{\link{value}},
+  \code{\link{weightedExpectedValue}}
+
+  Other FuzzyNumber-method: \code{\link{alphacut}},
+  \code{\link{alphaInterval}}, \code{\link{ambiguity}},
+  \code{\link{Arithmetic}}, \code{\link{as.character}},
+  \code{\link{as.FuzzyNumber}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{core}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{evaluate}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}}, \code{\link{Extract}},
-  \code{\link{Extract}}, \code{\link{Extract}},
-  \code{\link{Extract}}, \code{\link{FuzzyNumber-class}},
-  \code{\link{integrateAlpha}},
+  \code{\link{evaluate}}, \code{\link{expectedInterval}},
+  \code{\link{FuzzyNumber}},
+  \code{\link{FuzzyNumber-class}},
   \code{\link{integrateAlpha}},
   \code{\link{piecewiseLinearApproximation}},
-  \code{\link{plot}}, \code{\link{plot}},
   \code{\link{plot}}, \code{\link{show}},
-  \code{\link{show}}, \code{\link{show}},
-  \code{\link{show}}, \code{\link{supp}},
+  \code{\link{supp}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}

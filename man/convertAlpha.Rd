@@ -1,0 +1,27 @@
+\name{convertAlpha}
+\alias{convertAlpha}
+\title{Convert a Given Upper/Lower Alpha-Cut Function to an Alpha-Cut Generating Function}
+\usage{
+  convertAlpha(f, y1, y2)
+}
+\arguments{
+  \item{f}{a function into [y1,y2]}
+
+  \item{y1}{numeric vector of length 1}
+
+  \item{y2}{numeric vector of length 1}
+}
+\value{
+  a new function defined on [0,1] (scaled input)
+}
+\description{
+  The resulting function calls the original function and
+  then linearly scales its output.
+}
+\seealso{
+  \code{\linkS4class{FuzzyNumber}}
+
+  Other auxiliary: \code{\link{approxInvert}},
+  \code{\link{convertSide}}
+}
+

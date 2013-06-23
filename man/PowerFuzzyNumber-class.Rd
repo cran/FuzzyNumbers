@@ -1,16 +1,32 @@
 \docType{class}
 \name{PowerFuzzyNumber-class}
 \alias{PowerFuzzyNumber-class}
-\title{S4 class representing a fuzzy number with sides given by power functions}
+\title{S4 class Representing a Fuzzy Number with Sides Given by Power Functions}
 \description{
-  S4 class representing a fuzzy number with sides given by
-  power functions
+  Fuzzy numbers which sides are given by power functions
+  are defined using four coefficients \code{a1} <=
+  \code{a2} <= \code{a3} <= \code{a4}, and parameters
+  \code{p.left}, \code{p.right}>0, which determine
+  exponents for the side functions.
+}
+\details{
+  We have
+  \eqn{\mathtt{left}(x)=x^{\mathtt{p.left}}}{left(x)=x^p.left},
+  and
+  \eqn{\mathtt{right}(x)=(1-x)^{\mathtt{p.right}}}{right(x)=(1-x)^p.right}.
+
+  This class is a natural generalization of trapezoidal
+  FNs. For other see
+  \linkS4class{PiecewiseLinearFuzzyNumber}.
 }
 \section{Slots}{
-  \describe{ \item{\code{p.left}:}{Object of class
-  \code{"numeric"}; 1.0 to get a trapezoidal FN }
-  \item{\code{p.right}:}{Object of class \code{"numeric"};
-  1.0 to get a trapezoidal FN } }
+  \describe{ \item{\code{a1}, \code{a2}, \code{a3},
+  \code{a4}, \code{lower}, \code{upper}, \code{left},
+  \code{right}:}{ Inherited from the
+  \code{\linkS4class{FuzzyNumber}} class.}
+  \item{\code{p.left}:}{single numeric value; 1.0 for a
+  trapezoidal FN.} \item{\code{p.right}:}{single numeric
+  value; 1.0 for a trapezoidal FN.} }
 }
 
 \section{Extends}{
@@ -18,9 +34,21 @@
 }
 \examples{
 showClass("PowerFuzzyNumber")
+showMethods(classes="PowerFuzzyNumber")
 }
 \seealso{
   \code{\link{PowerFuzzyNumber}} for a convenient
+  constructor, \code{\link{as.PowerFuzzyNumber}} for
+  conversion of objects to this class.
+
+  \code{\link{PowerFuzzyNumber}} for a convenient
   constructor
+
+  Other PowerFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{as.character}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}},
+  \code{\link{PowerFuzzyNumber}}
 }
 

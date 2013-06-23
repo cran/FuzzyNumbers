@@ -1,6 +1,6 @@
 \name{PowerFuzzyNumber}
 \alias{PowerFuzzyNumber}
-\title{Creates a ``parametric'' fuzzy number with sides given by power functions}
+\title{Creates a Fuzzy Number with Sides Given by Power Functions}
 \usage{
   PowerFuzzyNumber(a1, a2, a3, a4, p.left = 1, p.right = 1)
 }
@@ -26,5 +26,13 @@
   For convenience, objects of class
   \code{\linkS4class{PowerFuzzyNumber}} may be created with
   this function.
+}
+\seealso{
+  Other PowerFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{as.character}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}},
+  \code{\link{PowerFuzzyNumber-class}}
 }
 

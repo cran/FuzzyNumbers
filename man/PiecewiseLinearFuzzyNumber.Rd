@@ -1,6 +1,6 @@
 \name{PiecewiseLinearFuzzyNumber}
 \alias{PiecewiseLinearFuzzyNumber}
-\title{Creates a piecewise linear fuzzy number}
+\title{Creates a Piecewise Linear Fuzzy Number}
 \usage{
   PiecewiseLinearFuzzyNumber(a1, a2, a3, a4, knot.n = 0,
     knot.alpha = numeric(0), knot.left = numeric(0),
@@ -29,12 +29,33 @@
   [\code{a3},\code{a4}]}
 }
 \value{
-  Object of class
-  \code{\linkS4class{PiecewiseLinearFuzzyNumber}}
+  An object of class
+  \code{\linkS4class{PiecewiseLinearFuzzyNumber}}.
 }
 \description{
   For convenience, objects of class
   \code{\linkS4class{PiecewiseLinearFuzzyNumber}} may be
   created with this function.
+}
+\details{
+  If \code{a1}, \code{a2}, \code{a3}, and \code{a4} are
+  missing, then \code{knot.left} and \code{knot.right} may
+  be of length \code{knot.n+2}.
+
+  If \code{knot.n} is not given, then it guessed from
+  \code{length(knot.left)}. If \code{knot.alpha} is
+  missing, then the knots will be equally distributed on
+  the interval [0,1].
+}
+\seealso{
+  Other PiecewiseLinearFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
+  \code{\link{as.character}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}}, \code{\link{fapply}},
+  \code{\link{PiecewiseLinearFuzzyNumber-class}},
+  \code{\link{plot}}
 }
 

@@ -1,56 +1,38 @@
 \docType{methods}
 \name{Extract}
-\alias{[,DiscontinuousFuzzyNumber-method}
-\alias{[,FuzzyNumber-method}
-\alias{[,PiecewiseLinearFuzzyNumber-method}
-\alias{[,PowerFuzzyNumber-method}
+\alias{[,DiscontinuousFuzzyNumber,character-method}
+\alias{[,FuzzyNumber,character-method}
+\alias{[,PiecewiseLinearFuzzyNumber,character-method}
+\alias{[,PowerFuzzyNumber,character-method}
 \alias{Extract}
-\title{FuzzyNumber slot accessor (read-only)}
+\title{FuzzyNumber Slot Accessors}
+\usage{
+  \S4method{[}{FuzzyNumber,character}(x, i)
+
+  \S4method{[}{PiecewiseLinearFuzzyNumber,character}(x, i)
+
+  \S4method{[}{PowerFuzzyNumber,character}(x, i)
+
+  \S4method{[}{DiscontinuousFuzzyNumber,character}(x, i)
+}
 \arguments{
-  \item{i}{slot name}
+  \item{x}{a fuzzy number}
 
-  \item{j}{not used}
-
-  \item{drop}{not used}
+  \item{i}{character; slot name}
 }
 \value{
   slot value
 }
 \description{
-  For possible slot names see man pages for class
-  FuzzyNumber and its derivatives
+  For possible slot names see man pages for the
+  \linkS4class{FuzzyNumber} class and its derivatives
+}
+\details{
+  All slot accessors are read-only.
 }
 \examples{
 A <- FuzzyNumber(1,2,3,4)
 A["a1"]
 A["right"]
-}
-\seealso{
-  Other FuzzyNumber.method: \code{\link{alphacut}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{ambiguity}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{convert.side}},
-  \code{\link{core}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{evaluate}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedValue}},
-  \code{\link{FuzzyNumber-class}},
-  \code{\link{integrateAlpha}},
-  \code{\link{integrateAlpha}},
-  \code{\link{piecewiseLinearApproximation}},
-  \code{\link{plot}}, \code{\link{plot}},
-  \code{\link{plot}}, \code{\link{show}},
-  \code{\link{show}}, \code{\link{show}},
-  \code{\link{show}}, \code{\link{supp}},
-  \code{\link{trapezoidalApproximation}},
-  \code{\link{value}}, \code{\link{weightedExpectedValue}},
-  \code{\link{width}}
 }
 

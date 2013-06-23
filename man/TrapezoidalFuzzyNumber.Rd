@@ -1,6 +1,6 @@
 \name{TrapezoidalFuzzyNumber}
 \alias{TrapezoidalFuzzyNumber}
-\title{Creates a trapezoidal fuzzy number}
+\title{Creates a Trapezoidal Fuzzy Number}
 \usage{
   TrapezoidalFuzzyNumber(a1, a2, a3, a4)
 }
@@ -21,5 +21,15 @@
   For convenience, objects of class
   \code{\linkS4class{TrapezoidalFuzzyNumber}} may be
   created with this function.
+}
+\seealso{
+  Other TrapezoidalFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}}, \code{\link{plot}},
+  \code{\link{TrapezoidalFuzzyNumber-class}},
+  \code{\link{TriangularFuzzyNumber}}
 }
 

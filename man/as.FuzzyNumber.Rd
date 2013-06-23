@@ -1,25 +1,52 @@
+\docType{methods}
 \name{as.FuzzyNumber}
 \alias{as.FuzzyNumber}
-\title{Coverts a trapezoidal or a piecewise linear fuzzy number object to a (general) FuzzyNumber}
+\alias{as.FuzzyNumber,FuzzyNumber-method}
+\alias{as.FuzzyNumber,numeric-method}
+\title{Converts an Object to a Fuzzy Number}
 \usage{
-  as.FuzzyNumber(object)
+  \S4method{as.FuzzyNumber}{numeric}(object)
+
+  \S4method{as.FuzzyNumber}{FuzzyNumber}(object)
 }
 \arguments{
-  \item{object}{a trapezoidal or piecewiselinear fuzzy
-  number}
+  \item{object}{a fuzzy number or a single numeric value
+  (crisp number) or vector of length two (interval)}
 }
 \value{
-  Object of class \code{FuzzyNumber}
+  Object of class \code{\linkS4class{FuzzyNumber}}
 }
 \description{
-  FuzzyNumber is the base class for all FNs. Note that some
-  functions for TFNs or PLFNs (more specific FNs) work much
-  faster and are more precise. This function shouldn't be
-  used in normal computations.
+  Please note that applying this function on a
+  \linkS4class{FuzzyNumber} child class causes information
+  loss, as it drops all additional slots defined in the
+  child classes. \code{\linkS4class{FuzzyNumber}} is the
+  base class for all FNs. Note that some functions for TFNs
+  or PLFNs work much faster and are more precise. This
+  function shouldn't be used in normal computations.
 }
 \seealso{
+  Other conversion: \code{\link{as.character}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}}
+
+  Other FuzzyNumber-method: \code{\link{alphacut}},
+  \code{\link{alphaInterval}}, \code{\link{ambiguity}},
+  \code{\link{Arithmetic}}, \code{\link{as.character}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{core}}, \code{\link{distance}},
+  \code{\link{evaluate}}, \code{\link{expectedInterval}},
+  \code{\link{expectedValue}}, \code{\link{FuzzyNumber}},
   \code{\link{FuzzyNumber-class}},
-  \code{\link{TrapezoidalFuzzyNumber-class}},
-  \code{\link{PiecewiseLinearFuzzyNumber-class}}
+  \code{\link{integrateAlpha}},
+  \code{\link{piecewiseLinearApproximation}},
+  \code{\link{plot}}, \code{\link{show}},
+  \code{\link{supp}},
+  \code{\link{trapezoidalApproximation}},
+  \code{\link{value}}, \code{\link{weightedExpectedValue}},
+  \code{\link{width}}
 }
 

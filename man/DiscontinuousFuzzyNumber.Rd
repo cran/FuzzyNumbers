@@ -1,6 +1,6 @@
 \name{DiscontinuousFuzzyNumber}
 \alias{DiscontinuousFuzzyNumber}
-\title{Creates a fuzzy number with possibly discontinuous side functions or alpha-cut bounds}
+\title{Creates a Fuzzy Number with Possibly Discontinuous Side Functions or Alpha-Cut Bounds}
 \usage{
   DiscontinuousFuzzyNumber(a1, a2, a3, a4,
     lower = function(a) rep(NA_real_, length(a)),
@@ -61,5 +61,11 @@
   For convenience, objects of class
   \code{\linkS4class{DiscontinuousFuzzyNumber}} may be
   created with this function.
+}
+\seealso{
+  Other DiscontinuousFuzzyNumber-method:
+  \code{\link{DiscontinuousFuzzyNumber-class}},
+  \code{\link{distance}}, \code{\link{integrateAlpha}},
+  \code{\link{plot}}
 }
 

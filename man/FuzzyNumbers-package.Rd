@@ -1,27 +1,24 @@
 \docType{package}
 \name{FuzzyNumbers-package}
 \alias{FuzzyNumbers-package}
-\title{Tools to deal with fuzzy numbers in R}
+\title{Tools to Deal with Fuzzy Numbers}
 \description{
   \pkg{FuzzyNumbers} is an open source (LGPL 3) package for
   R. It provides S4 classes and methods to deal with Fuzzy
-  Numbers and allows for computations of arithmetic
-  operations on FNs, approximation by trapezoidal and
-  piecewise linear FNs, random fuzzy numbers generation [TO
-  DO] etc. The package may be used by the practitioners as
+  Numbers. The package may be used by the practitioners as
   well as by the researchers in fuzzy numbers theory (e.g.
   for testing new algorithms, generating numerical
   examples, preparing figures).
 }
 \details{
-  Fuzzy set theory lets us effectively and quite
-  intuitively represent imprecise or vague information.
-  Fuzzy numbers, which form a particular subclass of fuzzy
-  sets of the real line, play a significant role in many
-  important theoretical and/or practical considerations.
-  This is because we often describe our knowledge about
-  objects through numbers, e.g. "I'm about 180 cm tall" or
-  "The rocket was launched between 2 and 3 p.m.".
+  Fuzzy set theory lets us quite intuitively represent
+  imprecise or vague information. Fuzzy numbers, which form
+  a particular subclass of fuzzy sets of the real line,
+  play a significant role in many important theoretical
+  and/or practical considerations. This is because we often
+  describe our knowledge about objects through numbers,
+  e.g. "I'm about 180 cm tall" or "The rocket was launched
+  between 2 and 3 p.m.".
 
   For the formal definition of a fuzzy number please refer
   to the \code{\linkS4class{FuzzyNumber}} man page. Note
@@ -30,7 +27,7 @@
   ``parametric'' FNs (see
   \code{\linkS4class{TrapezoidalFuzzyNumber}}
   \code{\linkS4class{PiecewiseLinearFuzzyNumber}},
-  \code{\linkS4class{PowerFuzzyNumber}},
+  \code{\linkS4class{PowerFuzzyNumber}}, and *EXPERIMENTAL*
   \code{\linkS4class{DiscontinuousFuzzyNumber}})
 
   The package aims to provide the following functionality:
@@ -38,38 +35,52 @@
   numbers (including FNs with discontinuous side functions
   and/or alpha-cuts), as well as their particular types,
   e.g. trapezoidal and piecewise linear fuzzy numbers,
-  \item Defuzzification and Approximation by Triangular and
-  Piecewise Linear FNs (see e.g.
+  \item Defuzzification and approximation by triangular and
+  piecewise linear FNs (see e.g.
   \code{\link{expectedValue}}, \code{\link{value}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{piecewiseLinearApproximation}}), \item
-  Visualization of FNs (see \code{\link{plot}}), \item
-  Operations on FNs [TO DO], \item Aggregation of FNs [TO
-  DO], \item Ranking of FNs [TO DO], \item Random FN
-  generation [TO DO], \item \dots }
+  Visualization of FNs (see \code{\link{plot}},
+  \code{\link{as.character}}), \item Basic operations on
+  FNs (see e.g. \code{\link{fapply}}), \item Aggregation of
+  FNs **TO DO**, \item Ranking of FNs **TO DO**, \item
+  Random FN generation **TO DO**, \item \dots }
 
   Please feel free to send any comments and feature
   requests to the author (see his homepage at
-  \url{http://www.ibspan.waw.pl/~gagolews}).
+  \url{http://staff.rexamine.com/gagolews/}).
 
   For a complete list of classes and methods call
-  \code{library(help="FuzzyNumbers")}. Moreover, you will
+  \code{help(package="FuzzyNumbers")}. Moreover, you will
   surely be interested in a step-by-step guide to the
-  package usage and features which is available at
-  \url{http://www.ibspan.waw.pl/~gagolews/FuzzyNumbers/doc/FuzzyNumbers-Tutorial.pdf}.
+  package usage and features which is available by calling
+  \code{vignette('FuzzyNumbers-Tutorial', 'FuzzyNumbers')}
+  or at
+  \url{http://github.com/Rexamine/FuzzyNumbers/raw/master/inst/doc/FuzzyNumbers-Tutorial.pdf}.
   \cr\cr
 
   \bold{Keywords}: Fuzzy Numbers, Fuzzy Sets, Shadowed
   Sets, Trapezoidal Approximation, Piecewise Linear
   Approximation, Approximate Reasoning, Imprecision,
   Vagueness, Randomness.
+
+  \bold{Acknowledgments}: Many thanks to Jan Caha,
+  Przemyslaw Grzegorzewski, Lucian Coroianu, and Pablo
+  Villacorta Iglesias for stimulating discussion.
+
+  The development of the package in March-June 2013 was
+  partially supported by the European Union from resources
+  of the European Social Fund, Project PO KL ``Information
+  technologies: Research and their interdisciplinary
+  applications'', agreement UDA-POKL.04.01.01-00-051/10-00.
 }
 \author{
-  Marek Gagolewski \email{gagolews@ibspan.waw.pl}
+  Marek Gagolewski \email{gagolews@rexamine.com},\cr with
+  contributions from Jan Caha
 }
 \references{
   \pkg{FuzzyNumbers} Homepage,
-  \url{http://www.ibspan.waw.pl/~gagolews/FuzzyNumbers/}.\cr
+  \url{http://www.rexamine.com/resources/fuzzynumbers/}.\cr
   Ban A.I. (2008), Approximation of fuzzy numbers by
   trapezoidal fuzzy numbers preserving the expected
   interval, Fuzzy Sets and Systems 159, pp. 1327-1344.\cr
@@ -79,33 +90,33 @@
   approximation of a fuzzy number, Fuzzy Sets and Systems
   122, pp. 353-356.\cr Coroianu L., Gagolewski M.,
   Grzegorzewski P. (2013), Nearest Piecewise Linear
-  Approximation of Fuzzy Numbers, to appear in Fuzzy Sets
-  and Systems.\cr Delgado M., Vila M.A., Voxman W. (1998),
-  On a canonical representation of a fuzzy number, Fuzzy
-  Sets and Systems 93, pp. 125-135.\cr Dubois D., Prade H.
-  (1978), Operations on fuzzy numbers, Int. J. Syst. Sci.
-  9, pp. 613-626.\cr Dubois D., Prade H. (1987), The mean
-  value of a fuzzy number, Fuzzy Sets and Systems 24, pp.
-  279-300.\cr Gagolewski M. (2012), A Guide to the
-  \code{FuzzyNumbers} Package for R,
-  \url{http://www.ibspan.waw.pl/~gagolews/FuzzyNumbers/doc/FuzzyNumbers-Tutorial.pdf},
-  2012.\cr Grzegorzewski P. (2010), Algorithms for
-  trapezoidal approximations of fuzzy numbers preserving
-  the expected interval, In: Bouchon-Meunier B. et al
-  (Eds.), Foundations of Reasoning Under Uncertainty,
-  Springer, pp. 85-98.\cr Grzegorzewski P. (1998), Metrics
-  and orders in space of fuzzy numbers, Fuzzy Sets and
-  Systems 97, pp. 83-94.\cr Grzegorzewski P,
-  Pasternak-Winiarska K. (2011), Trapezoidal approximations
-  of fuzzy numbers with restrictions on the support and
-  core, Proc. EUSFLAT/LFA 2011, Atlantic Press, pp.
-  749-756.\cr Klir G.J., Yuan B. (1995), Fuzzy sets and
-  fuzzy logic. Theory and applications, Prentice Hall, New
-  Jersey.\cr Stefanini L., Sorini L. (2009), Fuzzy
-  arithmetic with parametric LR fuzzy numbers, In: Proc.
-  IFSA/EUSFLAT 2009, pp. 600-605.\cr Yeh C.-T. (2008),
-  Trapezoidal and triangular approximations preserving the
-  expected interval, Fuzzy Sets and Systems 159, pp.
-  1345-1353.\cr
+  Approximation of Fuzzy Numbers, Fuzzy Sets and Systems,
+  2013, doi:10.1016/j.fss.2013.02.005.\cr Delgado M., Vila
+  M.A., Voxman W. (1998), On a canonical representation of
+  a fuzzy number, Fuzzy Sets and Systems 93, pp.
+  125-135.\cr Dubois D., Prade H. (1978), Operations on
+  fuzzy numbers, Int. J. Syst. Sci. 9, pp. 613-626.\cr
+  Dubois D., Prade H. (1987), The mean value of a fuzzy
+  number, Fuzzy Sets and Systems 24, pp. 279-300.\cr
+  Gagolewski M. (2013), A Guide to the \pkg{FuzzyNumbers}
+  Package for R,
+  \url{http://github.com/Rexamine/FuzzyNumbers/raw/master/inst/doc/FuzzyNumbers-Tutorial.pdf}.\cr
+  Grzegorzewski P. (2010), Algorithms for trapezoidal
+  approximations of fuzzy numbers preserving the expected
+  interval, In: Bouchon-Meunier B. et al (Eds.),
+  Foundations of Reasoning Under Uncertainty, Springer, pp.
+  85-98.\cr Grzegorzewski P. (1998), Metrics and orders in
+  space of fuzzy numbers, Fuzzy Sets and Systems 97, pp.
+  83-94.\cr Grzegorzewski P,. Pasternak-Winiarska K.
+  (2011), Trapezoidal approximations of fuzzy numbers with
+  restrictions on the support and core, Proc. EUSFLAT/LFA
+  2011, Atlantic Press, pp. 749-756.\cr Klir G.J., Yuan B.
+  (1995), Fuzzy sets and fuzzy logic. Theory and
+  applications, Prentice Hall, New Jersey.\cr Stefanini L.,
+  Sorini L. (2009), Fuzzy arithmetic with parametric LR
+  fuzzy numbers, In: Proc. IFSA/EUSFLAT 2009, pp.
+  600-605.\cr Yeh C.-T. (2008), Trapezoidal and triangular
+  approximations preserving the expected interval, Fuzzy
+  Sets and Systems 159, pp. 1345-1353.\cr
 }
 

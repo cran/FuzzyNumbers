@@ -1,19 +1,37 @@
 \docType{class}
 \name{PiecewiseLinearFuzzyNumber-class}
 \alias{PiecewiseLinearFuzzyNumber-class}
-\title{S4 class representing a piecewise linear fuzzy number}
+\title{S4 Class Representing a Piecewise Linear Fuzzy Number}
 \description{
   A piecewise linear fuzzy number (PLFN) has side functions
   and alpha-cut bounds that linearly interpolate a given
   set of points (at fixed alpha-cuts).
 }
+\details{
+  If \code{knot.n} is equal to 0 or all left and right
+  knots lie on common lines, then a Piecewise Linear Fuzzy
+  Number reduces to a \linkS4class{TrapezoidalFuzzyNumber}.
+  Note that, however, the
+  \code{\linkS4class{TrapezoidalFuzzyNumber}} does not
+  inherit from
+  \code{\linkS4class{PiecewiseLinearFuzzyNumber}} for
+  efficiency reasons. To convert the former to the latter,
+  call \code{\link{as.PiecewiseLinearFuzzyNumber}}.
+}
 \section{Slots}{
-  \describe{ \item{\code{knot.n}:}{Object of class
-  \code{"numeric"} ~~ } \item{\code{knot.alpha}:}{Object of
-  class \code{"numeric"} ~~ }
-  \item{\code{knot.left}:}{Object of class \code{"numeric"}
-  ~~ } \item{\code{knot.right}:}{Object of class
-  \code{"numeric"} ~~ } }
+  \describe{ \item{\code{a1}, \code{a2}, \code{a3},
+  \code{a4}, \code{lower}, \code{upper}, \code{left},
+  \code{right}:}{ Inherited from the
+  \code{\linkS4class{FuzzyNumber}} class.}
+  \item{\code{knot.n}:}{number of knots, a single integer
+  value, 0 for a trapezoidal fuzzy number}
+  \item{\code{knot.alpha}:}{alpha-cuts, increasingly sorted
+  vector of length \code{knot.n} with elements in [0,1]}
+  \item{\code{knot.left}:}{nondecreasingly sorted vector of
+  length \code{knot.n}; defines left alpha-cut bounds at
+  knots} \item{\code{knot.right}:}{nondecreasingly sorted
+  vector of length \code{knot.n}; defines right alpha-cut
+  bounds at knots} }
 }
 
 \section{Extends}{
@@ -21,9 +39,23 @@
 }
 \examples{
 showClass("PiecewiseLinearFuzzyNumber")
+showMethods(classes="PiecewiseLinearFuzzyNumber")
 }
 \seealso{
   \code{\link{PiecewiseLinearFuzzyNumber}} for a convenient
-  constructor
+  constructor, \code{\link{as.PiecewiseLinearFuzzyNumber}}
+  for conversion of objects to this class, and
+  \code{\link{piecewiseLinearApproximation}} for
+  approximation routines.
+
+  Other PiecewiseLinearFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
+  \code{\link{as.character}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}}, \code{\link{fapply}},
+  \code{\link{PiecewiseLinearFuzzyNumber}},
+  \code{\link{plot}}
 }
 

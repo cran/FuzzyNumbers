@@ -1,20 +1,34 @@
 \docType{class}
 \name{DiscontinuousFuzzyNumber-class}
 \alias{DiscontinuousFuzzyNumber-class}
-\title{S4 class representing a fuzzy number with discontinuous side functions or alpha-cut bounds}
+\title{**EXPERIMENTAL** S4 Class Representing a Fuzzy Number with Discontinuous Side Functions or Alpha-Cut Bounds}
 \description{
-  S4 class representing a fuzzy number with discontinuous
-  side functions or alpha-cut bounds
+  Discontinuity information increase the precision of some
+  numerical integration-based algorithms, e.g. of
+  \code{\link{piecewiseLinearApproximation}}. It also
+  allows for making more valid fuzzy number plots.
 }
 \section{Slots}{
-  \describe{ \item{\code{discontinuities.left}:}{Object of
-  class \code{"numeric"} ~~ }
-  \item{\code{discontinuities.right}:}{Object of class
-  \code{"numeric"} ~~ }
-  \item{\code{discontinuities.lower}:}{Object of class
-  \code{"numeric"} ~~ }
-  \item{\code{discontinuities.upper}:}{Object of class
-  \code{"numeric"} ~~ } }
+  \describe{ \item{\code{a1}, \code{a2}, \code{a3},
+  \code{a4}, \code{lower}, \code{upper}, \code{left},
+  \code{right}:}{ Inherited from the
+  \code{\linkS4class{FuzzyNumber}} class.}
+  \item{\code{discontinuities.left}:}{nondecreasingly
+  sorted numeric vector with elements in (0,1);
+  discontinuity points for the left side generating
+  function}
+  \item{\code{discontinuities.right}:}{nondecreasingly
+  sorted numeric vector with elements in (0,1);
+  discontinuity points for the right side generating
+  function}
+  \item{\code{discontinuities.lower}:}{nondecreasingly
+  sorted numeric vector with elements in (0,1);
+  discontinuity points for the lower alpha-cut bound
+  generator}
+  \item{\code{discontinuities.upper}:}{nondecreasingly
+  sorted numeric vector with elements in (0,1);
+  discontinuity points for the upper alpha-cut bound
+  generator} }
 }
 
 \section{Extends}{
@@ -22,9 +36,15 @@
 }
 \examples{
 showClass("DiscontinuousFuzzyNumber")
+showMethods(classes="DiscontinuousFuzzyNumber")
 }
 \seealso{
   \code{\link{DiscontinuousFuzzyNumber}} for a convenient
   constructor
+
+  Other DiscontinuousFuzzyNumber-method:
+  \code{\link{DiscontinuousFuzzyNumber}},
+  \code{\link{distance}}, \code{\link{integrateAlpha}},
+  \code{\link{plot}}
 }
 

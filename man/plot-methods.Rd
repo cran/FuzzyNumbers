@@ -1,33 +1,71 @@
 \docType{methods}
 \name{plot}
 \alias{plot}
+\alias{plot,DiscontinuousFuzzyNumber,missing-method}
 \alias{plot,FuzzyNumber,missing-method}
 \alias{plot,PiecewiseLinearFuzzyNumber,missing-method}
 \alias{plot,TrapezoidalFuzzyNumber,missing-method}
-\title{Plot a fuzzy number}
+\title{Plot a Fuzzy Number}
+\usage{
+  \S4method{plot}{FuzzyNumber,missing}(x, y, from=NULL,
+    to=NULL, n=101, at.alpha=NULL,
+    draw.membership.function=TRUE,
+    draw.alphacuts=!draw.membership.function, xlab=NULL,
+    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
+    lty=1, pch=1, lwd=1, shadowdensity=15, shadowangle=45,
+    shadowcol=col, shadowborder=NULL, add=FALSE, ...)
+
+  \S4method{plot}{TrapezoidalFuzzyNumber,missing}(x, y,
+    from=NULL, to=NULL, draw.membership.function=TRUE,
+    draw.alphacuts=!draw.membership.function, xlab=NULL,
+    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
+    lty=1, pch=1, lwd=1, add=FALSE, ...)
+
+  \S4method{plot}{PiecewiseLinearFuzzyNumber,missing}(x, y,
+    from=NULL, to=NULL, draw.membership.function=TRUE,
+    draw.alphacuts=!draw.membership.function, xlab=NULL,
+    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
+    lty=1, pch=1, lwd=1, add=FALSE, ...)
+
+  \S4method{plot}{DiscontinuousFuzzyNumber,missing}(x, y,
+    from=NULL, to=NULL, n=101,
+    draw.membership.function=TRUE,
+    draw.alphacuts=!draw.membership.function, xlab=NULL,
+    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
+    lty=1, pch=1, lwd=1, add=FALSE, ...)
+}
 \arguments{
+  \item{x}{a fuzzy number}
+
+  \item{y}{not used}
+
   \item{from}{numeric;}
 
   \item{to}{numeric;}
 
-  \item{n}{numeric;}
+  \item{n}{numeric; number of points to probe}
 
-  \item{at.alpha}{numeric vector;}
+  \item{at.alpha}{numeric vector; give exact alpha-cuts at
+  which linear interpolation should be done}
 
-  \item{draw.membership.function}{logical;}
+  \item{draw.membership.function}{logical; you want
+  membership function (\code{TRUE}) or alpha-cuts plot
+  (\code{FALSE})?}
 
-  \item{draw.alphacuts}{defaults
+  \item{draw.alphacuts}{logical; defaults
   \code{!draw.membership.function}}
 
-  \item{xlab}{character;}
+  \item{xlab}{character; x-axis label}
 
-  \item{ylab}{character;}
+  \item{ylab}{character; y-axis label}
 
   \item{xlim}{numeric;}
 
   \item{ylim}{numeric;}
 
-  \item{type}{character; defaults \code{"l"}}
+  \item{type}{character; defaults \code{"l"}; plot type,
+  e.g.~\code{"l"} for lines, \code{"p"} for points, or
+  \code{"b"} for both}
 
   \item{col}{see \code{\link{plot.default}}}
 
@@ -37,29 +75,32 @@
 
   \item{lwd}{see \code{\link{plot.default}}}
 
-  \item{shadowintensity}{for shadowed sets;}
+  \item{shadowdensity}{numeric; for shadowed sets;}
 
-  \item{shadowangle}{for shadowed sets;}
+  \item{shadowangle}{numeric; for shadowed sets;}
 
-  \item{shadowcol}{for shadowed sets;}
+  \item{shadowcol}{color specification, see
+  \code{\link{plot.default}}; for shadowed sets;}
 
-  \item{shadowborder}{for shadowed sets;}
+  \item{shadowborder}{numeric; for shadowed sets;}
 
-  \item{add}{logical;}
+  \item{add}{logical; add another FuzzyNumber to existing
+  plot?}
 
   \item{...}{further arguments passed to
   \code{\link{plot.default}}}
 }
-\description{
-  Note that if \code{from} > \code{a1} then it is set to
-  \code{a1}.
+\value{
+  nothing really interesting
 }
-\section{Methods}{
-  \describe{ \item{\code{signature(x = "FuzzyNumber", y =
-  "missing")}}{} \item{\code{signature(x =
-  "TrapezoidalFuzzyNumber", y = "missing")}}{}
-  \item{\code{signature(x = "PiecewiseLinearFuzzyNumber", y
-  = "missing")}}{} }
+\description{
+  The function aims to provide a similar look-and-feel to
+  the built-in \code{\link{plot.default}} and
+  \code{\link{curve}} function.
+}
+\details{
+  Note that if \code{from > a1} then it is set to
+  \code{a1}.
 }
 \examples{
 plot(FuzzyNumber(0,1,2,3), col="gray")
@@ -67,31 +108,47 @@ plot(FuzzyNumber(0,1,2,3, left=function(x) x^2, right=function(x) 1-x^3), add=TR
 plot(FuzzyNumber(0,1,2,3, lower=function(x) x, upper=function(x) 1-x), add=TRUE, col=2)
 }
 \seealso{
-  Other FuzzyNumber.method: \code{\link{alphacut}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{alphaInterval}}, \code{\link{alphaInterval}},
-  \code{\link{ambiguity}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{Arithmetic}},
-  \code{\link{Arithmetic}}, \code{\link{convert.side}},
+  Other DiscontinuousFuzzyNumber-method:
+  \code{\link{DiscontinuousFuzzyNumber}},
+  \code{\link{DiscontinuousFuzzyNumber-class}},
+  \code{\link{distance}}, \code{\link{integrateAlpha}}
+
+  Other FuzzyNumber-method: \code{\link{alphacut}},
+  \code{\link{alphaInterval}}, \code{\link{ambiguity}},
+  \code{\link{Arithmetic}}, \code{\link{as.character}},
+  \code{\link{as.FuzzyNumber}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{core}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{distance}},
-  \code{\link{distance}}, \code{\link{evaluate}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedValue}}, \code{\link{Extract}},
-  \code{\link{Extract}}, \code{\link{Extract}},
-  \code{\link{Extract}}, \code{\link{FuzzyNumber-class}},
-  \code{\link{integrateAlpha}},
+  \code{\link{evaluate}}, \code{\link{expectedInterval}},
+  \code{\link{expectedValue}}, \code{\link{FuzzyNumber}},
+  \code{\link{FuzzyNumber-class}},
   \code{\link{integrateAlpha}},
   \code{\link{piecewiseLinearApproximation}},
-  \code{\link{show}}, \code{\link{show}},
-  \code{\link{show}}, \code{\link{show}},
-  \code{\link{supp}},
+  \code{\link{show}}, \code{\link{supp}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
+
+  Other PiecewiseLinearFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
+  \code{\link{as.character}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}}, \code{\link{fapply}},
+  \code{\link{PiecewiseLinearFuzzyNumber}},
+  \code{\link{PiecewiseLinearFuzzyNumber-class}}
+
+  Other TrapezoidalFuzzyNumber-method:
+  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.TrapezoidalFuzzyNumber}},
+  \code{\link{expectedInterval}},
+  \code{\link{TrapezoidalFuzzyNumber}},
+  \code{\link{TrapezoidalFuzzyNumber-class}},
+  \code{\link{TriangularFuzzyNumber}}
 }
 

@@ -1,10 +1,9 @@
 \name{integrate_discont_val}
 \alias{integrate_discont_val}
-\title{Integrate a function with at most finite number of discontinuities}
+\title{Integrate a Function with at Most Finite Number of Discontinuities *EXPERIMENTAL*}
 \usage{
   integrate_discont_val(f, from, to,
-    discontinuities = numeric(0),
-    rel.tol = .Machine$double.eps^0.35, ...)
+    discontinuities = numeric(0), ...)
 }
 \arguments{
   \item{f}{an R function taking a numeric vector of length
@@ -18,8 +17,6 @@
   \item{discontinuities}{nondecreasingly sorted numeric
   vector which indicates the points at which \code{f} is
   discontinuous}
-
-  \item{rel.tol}{relative accuracy requested}
 
   \item{...}{further arguments to be passed to the
   \code{\link{integrate}} function.}
