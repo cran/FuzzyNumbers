@@ -2,8 +2,7 @@
 \alias{integrate_discont_val}
 \title{Integrate a Function with at Most Finite Number of Discontinuities *EXPERIMENTAL*}
 \usage{
-  integrate_discont_val(f, from, to,
-    discontinuities = numeric(0), ...)
+integrate_discont_val(f, from, to, discontinuities = numeric(0), ...)
 }
 \arguments{
   \item{f}{an R function taking a numeric vector of length
@@ -22,10 +21,10 @@
   \code{\link{integrate}} function.}
 }
 \value{
-  the estimate of the integral
+Returns the estimate of the integral.
 }
 \description{
-  The function uses multiple calls to
-  \code{\link{integrate}}.
+The function uses multiple calls to
+\code{\link{integrate}}.
 }
 

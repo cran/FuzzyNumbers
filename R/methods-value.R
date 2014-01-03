@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -24,15 +24,16 @@
 #' @description
 #' The calculation of the so-called value is one of possible methods to
 #' deffuzify a fuzzy number.
-#' 
+#'
 #' @details
 #' The value of \eqn{A} (Delgrado et al, 1998) is defined as
 #' \eqn{val(A) := \int_0^1 \alpha\left(A_L(\alpha)+A_U(\alpha)\right)\,d\alpha}{val(A) := int_0^1 \alpha(A_L(\alpha) + A_U(\alpha))d\alpha}.
-#' 
+#'
 #' @param object a fuzzy number
 #' @param ... additional arguments passed to \code{\link{alphaInterval}}
-#' @return a single numeric value
 #' 
+#' @return Returns a single numeric value.
+#'
 #' @exportMethod value
 #' @docType methods
 #' @name value
@@ -45,7 +46,7 @@
 #' \S4method{value}{FuzzyNumber}(object, ...)
 #' @references
 #' Delgado M., Vila M.A., Voxman W. (1998), On a canonical representation of a fuzzy number,
-#' Fuzzy Sets and Systems 93, pp. 125-135.\cr
+#' Fuzzy Sets and Systems 93, pp. 125-135.
 setGeneric("value",
            function(object, ...) standardGeneric("value"))
 
@@ -59,5 +60,3 @@ setMethod(
       return(sum(alphaInterval(object, ...)))
    }
 )
-
-

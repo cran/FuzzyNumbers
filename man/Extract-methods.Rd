@@ -1,19 +1,19 @@
 \docType{methods}
 \name{Extract}
+\alias{Extract}
 \alias{[,DiscontinuousFuzzyNumber,character-method}
 \alias{[,FuzzyNumber,character-method}
 \alias{[,PiecewiseLinearFuzzyNumber,character-method}
 \alias{[,PowerFuzzyNumber,character-method}
-\alias{Extract}
 \title{FuzzyNumber Slot Accessors}
 \usage{
-  \S4method{[}{FuzzyNumber,character}(x, i)
+\S4method{[}{FuzzyNumber,character}(x, i)
 
-  \S4method{[}{PiecewiseLinearFuzzyNumber,character}(x, i)
+\S4method{[}{PiecewiseLinearFuzzyNumber,character}(x, i)
 
-  \S4method{[}{PowerFuzzyNumber,character}(x, i)
+\S4method{[}{PowerFuzzyNumber,character}(x, i)
 
-  \S4method{[}{DiscontinuousFuzzyNumber,character}(x, i)
+\S4method{[}{DiscontinuousFuzzyNumber,character}(x, i)
 }
 \arguments{
   \item{x}{a fuzzy number}
@@ -21,14 +21,14 @@
   \item{i}{character; slot name}
 }
 \value{
-  slot value
+Returns the slot value.
 }
 \description{
-  For possible slot names see man pages for the
-  \linkS4class{FuzzyNumber} class and its derivatives
+For possible slot names see man pages for the
+\linkS4class{FuzzyNumber} class and its derivatives
 }
 \details{
-  All slot accessors are read-only.
+All slot accessors are read-only.
 }
 \examples{
 A <- FuzzyNumber(1,2,3,4)

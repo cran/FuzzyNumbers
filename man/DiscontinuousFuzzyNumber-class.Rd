@@ -3,10 +3,10 @@
 \alias{DiscontinuousFuzzyNumber-class}
 \title{**EXPERIMENTAL** S4 Class Representing a Fuzzy Number with Discontinuous Side Functions or Alpha-Cut Bounds}
 \description{
-  Discontinuity information increase the precision of some
-  numerical integration-based algorithms, e.g. of
-  \code{\link{piecewiseLinearApproximation}}. It also
-  allows for making more valid fuzzy number plots.
+Discontinuity information increase the precision of some
+numerical integration-based algorithms, e.g. of
+\code{\link{piecewiseLinearApproximation}}. It also allows
+for making more valid fuzzy number plots.
 }
 \section{Slots}{
   \describe{ \item{\code{a1}, \code{a2}, \code{a3},
@@ -39,12 +39,23 @@ showClass("DiscontinuousFuzzyNumber")
 showMethods(classes="DiscontinuousFuzzyNumber")
 }
 \seealso{
-  \code{\link{DiscontinuousFuzzyNumber}} for a convenient
-  constructor
+\code{\link{DiscontinuousFuzzyNumber}} for a convenient
+constructor
 
-  Other DiscontinuousFuzzyNumber-method:
-  \code{\link{DiscontinuousFuzzyNumber}},
-  \code{\link{distance}}, \code{\link{integrateAlpha}},
-  \code{\link{plot}}
+Other DiscontinuousFuzzyNumber-method:
+\code{\link{DiscontinuousFuzzyNumber}};
+\code{\link{distance}},
+\code{\link{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,DiscontinuousFuzzyNumber,FuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,FuzzyNumber-method}};
+\code{\link{integrateAlpha}},
+\code{\link{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}},
+\code{\link{integrateAlpha,FuzzyNumber,character,numeric,numeric-method}};
+\code{\link{plot}},
+\code{\link{plot,DiscontinuousFuzzyNumber,missing-method}},
+\code{\link{plot,FuzzyNumber,missing-method}},
+\code{\link{plot,PiecewiseLinearFuzzyNumber,missing-method}},
+\code{\link{plot,TrapezoidalFuzzyNumber,missing-method}}
 }
 

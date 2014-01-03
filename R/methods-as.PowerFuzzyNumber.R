@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -22,26 +22,27 @@
 
 #' @title
 #' Converts an Object to a Power Fuzzy Number
-#' 
+#'
 #' @description
 #' This method is only for exact conversion.
-#' 
+#'
 #' @usage
 #' \S4method{as.PowerFuzzyNumber}{numeric}(object)
-#' 
+#'
 #' \S4method{as.PowerFuzzyNumber}{FuzzyNumber}(object)
-#' 
+#'
 #' \S4method{as.PowerFuzzyNumber}{PowerFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{as.PowerFuzzyNumber}{PiecewiseLinearFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{as.PowerFuzzyNumber}{TrapezoidalFuzzyNumber}(object)
 #'
 #' @param object a fuzzy number or a single numeric value (crisp number)
 #' or vector of length two (interval)
-#' @return Object of class \code{\linkS4class{PowerFuzzyNumber}}
 #' 
-#' 
+#' @return Returns an object of class \code{\linkS4class{PowerFuzzyNumber}}.
+#'
+#'
 #' @name as.PowerFuzzyNumber
 #' @docType methods
 #' @rdname as.PowerFuzzyNumber
@@ -89,7 +90,7 @@ setMethod(
       {
          new("PowerFuzzyNumber",
             a1=object@a1, a2=object@a2, a3=object@a3, a4=object@a4, p.left=1, p.right=1)
-      }         
+      }
       else
          stop("This method is only for exact conversion")
    })
@@ -111,7 +112,7 @@ setMethod(
    definition=function(object)
    {
       stopifnot(is.finite(object))
-      
+
       if (length(object) == 1)
          new("PowerFuzzyNumber",
              a1=object, a2=object, a3=object, a4=object, p.left=1, p.right=1)

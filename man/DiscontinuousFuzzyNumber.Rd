@@ -2,15 +2,12 @@
 \alias{DiscontinuousFuzzyNumber}
 \title{Creates a Fuzzy Number with Possibly Discontinuous Side Functions or Alpha-Cut Bounds}
 \usage{
-  DiscontinuousFuzzyNumber(a1, a2, a3, a4,
-    lower = function(a) rep(NA_real_, length(a)),
-    upper = function(a) rep(NA_real_, length(a)),
-    left = function(x) rep(NA_real_, length(x)),
-    right = function(x) rep(NA_real_, length(x)),
-    discontinuities.left = numeric(0),
-    discontinuities.right = numeric(0),
-    discontinuities.lower = numeric(0),
-    discontinuities.upper = numeric(0))
+DiscontinuousFuzzyNumber(a1, a2, a3, a4, lower = function(a) rep(NA_real_,
+  length(a)), upper = function(a) rep(NA_real_, length(a)),
+  left = function(x) rep(NA_real_, length(x)), right = function(x)
+  rep(NA_real_, length(x)), discontinuities.left = numeric(0),
+  discontinuities.right = numeric(0), discontinuities.lower = numeric(0),
+  discontinuities.upper = numeric(0))
 }
 \arguments{
   \item{a1}{a number specyfing left bound of the support}
@@ -54,18 +51,29 @@
   0}
 }
 \value{
-  Object of class
-  \code{\linkS4class{DiscontinuousFuzzyNumber}}
+Object of class
+\code{\linkS4class{DiscontinuousFuzzyNumber}}
 }
 \description{
-  For convenience, objects of class
-  \code{\linkS4class{DiscontinuousFuzzyNumber}} may be
-  created with this function.
+For convenience, objects of class
+\code{\linkS4class{DiscontinuousFuzzyNumber}} may be
+created with this function.
 }
 \seealso{
-  Other DiscontinuousFuzzyNumber-method:
-  \code{\link{DiscontinuousFuzzyNumber-class}},
-  \code{\link{distance}}, \code{\link{integrateAlpha}},
-  \code{\link{plot}}
+Other DiscontinuousFuzzyNumber-method:
+\code{\link{DiscontinuousFuzzyNumber-class}};
+\code{\link{distance}},
+\code{\link{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,DiscontinuousFuzzyNumber,FuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,FuzzyNumber-method}};
+\code{\link{integrateAlpha}},
+\code{\link{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}},
+\code{\link{integrateAlpha,FuzzyNumber,character,numeric,numeric-method}};
+\code{\link{plot}},
+\code{\link{plot,DiscontinuousFuzzyNumber,missing-method}},
+\code{\link{plot,FuzzyNumber,missing-method}},
+\code{\link{plot,PiecewiseLinearFuzzyNumber,missing-method}},
+\code{\link{plot,TrapezoidalFuzzyNumber,missing-method}}
 }
 

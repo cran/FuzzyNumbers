@@ -2,7 +2,7 @@
 \alias{PowerFuzzyNumber}
 \title{Creates a Fuzzy Number with Sides Given by Power Functions}
 \usage{
-  PowerFuzzyNumber(a1, a2, a3, a4, p.left = 1, p.right = 1)
+PowerFuzzyNumber(a1, a2, a3, a4, p.left = 1, p.right = 1)
 }
 \arguments{
   \item{a1}{a number specyfing left bound of the support}
@@ -20,19 +20,42 @@
   for the right side}
 }
 \value{
-  Object of class \code{\linkS4class{PowerFuzzyNumber}}
+Object of class \code{\linkS4class{PowerFuzzyNumber}}
 }
 \description{
-  For convenience, objects of class
-  \code{\linkS4class{PowerFuzzyNumber}} may be created with
-  this function.
+For convenience, objects of class
+\code{\linkS4class{PowerFuzzyNumber}} may be created with
+this function.
 }
 \seealso{
-  Other PowerFuzzyNumber-method:
-  \code{\link{alphaInterval}}, \code{\link{as.character}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{expectedInterval}},
-  \code{\link{PowerFuzzyNumber-class}}
+Other PowerFuzzyNumber-method:
+\code{\link{PowerFuzzyNumber-class}};
+\code{\link{alphaInterval}},
+\code{\link{alphaInterval,FuzzyNumber-method}},
+\code{\link{alphaInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{alphaInterval,PowerFuzzyNumber-method}},
+\code{\link{alphaInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{as.PowerFuzzyNumber}},
+\code{\link{as.PowerFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,numeric-method}};
+\code{\link{as.TrapezoidalFuzzyNumber}},
+\code{\link{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,numeric-method}};
+\code{\link{as.character}},
+\code{\link{as.character,FuzzyNumber-method}},
+\code{\link{as.character,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.character,PowerFuzzyNumber-method}},
+\code{\link{as.character,TrapezoidalFuzzyNumber-method}};
+\code{\link{expectedInterval}},
+\code{\link{expectedInterval,FuzzyNumber-method}},
+\code{\link{expectedInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{expectedInterval,PowerFuzzyNumber-method}},
+\code{\link{expectedInterval,TrapezoidalFuzzyNumber-method}}
 }
 

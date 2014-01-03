@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -19,19 +19,19 @@
 
 # internal - test
 integrate_identity <- function(object, which=c("lower", "upper"), from, to, n=100L)
-{ 
+{
    which <- match.arg(which)
    stopifnot(is.numeric(from), length(from) == 1, is.finite(from))
    stopifnot(is.numeric(to), length(to) == 1, is.finite(to))
    stopifnot(is.numeric(n), length(n) == 1, n > 1)
-   
+
    # Boole's rule (Newton-Cotes of degree 4)
-   br <- seq(from, to, length.out=4*n-3) 
+   br <- seq(from, to, length.out=4*n-3)
    if (which == 'lower')
       fval <- (object@a1+(object@a2-object@a1)*object@lower(br))*br
    else
       fval <- (object@a3+(object@a4-object@a3)*object@upper(br))*br
-   
+
    sum(fval * c(7, rep(c(32, 12, 32, 14), times=n-2), 32, 12, 32, 7)/90)*(to-from)/(n-1)
 }
 
@@ -49,7 +49,8 @@ integrate_identity <- function(object, which=c("lower", "upper"), from, to, n=10
 #' @param discontinuities nondecreasingly sorted numeric vector which indicates
 #'          the points at which \code{f} is discontinuous
 #' @param ... further arguments to be passed to the \code{\link{integrate}} function.
-#' @return the estimate of the integral
+#' 
+#' @return Returns the estimate of the integral.
 #' @export
 integrate_discont_val <- function(f, from, to, discontinuities=numeric(0), ...)
 {
@@ -86,7 +87,7 @@ integrate_discont_val <- function(f, from, to, discontinuities=numeric(0), ...)
 
 #' @title
 #' Numerically Integrate Alpha-Cut Bounds
-#' 
+#'
 #' @description
 #' Integrates numerically a transformed or weighted lower or upper alpha-cut bound of a fuzzy number.
 #'
@@ -97,8 +98,9 @@ integrate_discont_val <- function(f, from, to, discontinuities=numeric(0), ...)
 #' @param weight a function or NULL
 #' @param transform a function or NULL
 #' @param ... additional arguments passed to \code{\link{integrate}} or \code{\link{integrate_discont_val}}
-#' @return a single numeric value
 #' 
+#' @return Returns a single numeric value.
+#'
 #' @exportMethod integrateAlpha
 #' @docType methods
 #' @name integrateAlpha
@@ -106,11 +108,13 @@ integrate_discont_val <- function(f, from, to, discontinuities=numeric(0), ...)
 #' @family DiscontinuousFuzzyNumber-method
 #' @rdname integrateAlpha-methods
 #' @aliases integrateAlpha,FuzzyNumber,character,numeric,numeric-method
-#' @aliases integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method
+#'          integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method
 #' @usage
-#' \S4method{integrateAlpha}{FuzzyNumber,character,numeric,numeric}(object, which=c("lower", "upper"), from=0, to=1, weight=NULL, transform=NULL, ...)
-#' 
-#' \S4method{integrateAlpha}{DiscontinuousFuzzyNumber,character,numeric,numeric}(object, which=c("lower", "upper"), from=0, to=1, weight=NULL, transform=NULL, ...)
+#' \S4method{integrateAlpha}{FuzzyNumber,character,numeric,numeric}(object, which=c("lower", "upper"),
+#'    from=0, to=1, weight=NULL, transform=NULL, ...)
+#'
+#' \S4method{integrateAlpha}{DiscontinuousFuzzyNumber,character,numeric,numeric}(object, which=c("lower", "upper"),
+#'    from=0, to=1, weight=NULL, transform=NULL, ...)
 setGeneric("integrateAlpha",
      function(object, which, from, to, ...) standardGeneric("integrateAlpha"))
 
@@ -125,19 +129,19 @@ setMethod(
                        from=0, to=1, weight=NULL, transform=NULL, ...)
    {
       which <- match.arg(which)
-      
+
       if (length(from) != 1 || length(to) != 1 || from < 0 || to > 1)
          stop("invalid `from' or `to'")
-      
+
       if (!is.null(weight) && (class(weight) != "function" || length(formals(weight)) != 1))
          stop("`weight' should be a function with 1 parameter")
-      
+
       if (!is.null(transform) && (class(transform) != "function" || length(formals(transform)) != 2))
          stop("`transform' should be a function with 2 parameter")
-      
+
       if (!is.null(weight) && !is.null(transform))
          stop("specify either `weight', `transform' or none")
-      
+
       if (which == "lower")
       {
          if (!is.null(weight))
@@ -169,8 +173,8 @@ setMethod(
                object@a3+(object@a4-object@a3)*object@upper(alpha)
          }
       }
-      
-      return(integrate(f=fun, from, to, ...)$value)
+
+      integrate(f=fun, from, to, ...)$value
    }
 )
 
@@ -233,8 +237,7 @@ setMethod(
          disconts <- object@discontinuities.upper
       }
 
-      return(integrate_discont_val(fun, from, to,
-         discontinuities=disconts, ...))
+      integrate_discont_val(fun, from, to,
+         discontinuities=disconts, ...)
    }
 )
-

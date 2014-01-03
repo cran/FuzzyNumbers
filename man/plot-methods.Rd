@@ -7,32 +7,28 @@
 \alias{plot,TrapezoidalFuzzyNumber,missing-method}
 \title{Plot a Fuzzy Number}
 \usage{
-  \S4method{plot}{FuzzyNumber,missing}(x, y, from=NULL,
-    to=NULL, n=101, at.alpha=NULL,
-    draw.membership.function=TRUE,
-    draw.alphacuts=!draw.membership.function, xlab=NULL,
-    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
-    lty=1, pch=1, lwd=1, shadowdensity=15, shadowangle=45,
-    shadowcol=col, shadowborder=NULL, add=FALSE, ...)
+\S4method{plot}{FuzzyNumber,missing}(x, y, from=NULL, to=NULL, n=101, at.alpha=NULL,
+draw.membership.function=TRUE, draw.alphacuts=!draw.membership.function,
+xlab=NULL, ylab=NULL, xlim=NULL, ylim=NULL,
+type="l", col=1, lty=1, pch=1, lwd=1,
+shadowdensity=15, shadowangle=45, shadowcol=col, shadowborder=NULL,
+add=FALSE, ...)
 
-  \S4method{plot}{TrapezoidalFuzzyNumber,missing}(x, y,
-    from=NULL, to=NULL, draw.membership.function=TRUE,
-    draw.alphacuts=!draw.membership.function, xlab=NULL,
-    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
-    lty=1, pch=1, lwd=1, add=FALSE, ...)
+\S4method{plot}{TrapezoidalFuzzyNumber,missing}(x, y, from=NULL, to=NULL,
+draw.membership.function=TRUE, draw.alphacuts=!draw.membership.function,
+xlab=NULL, ylab=NULL, xlim=NULL, ylim=NULL,
+type="l", col=1, lty=1, pch=1, lwd=1, add=FALSE, ...)
 
-  \S4method{plot}{PiecewiseLinearFuzzyNumber,missing}(x, y,
-    from=NULL, to=NULL, draw.membership.function=TRUE,
-    draw.alphacuts=!draw.membership.function, xlab=NULL,
-    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
-    lty=1, pch=1, lwd=1, add=FALSE, ...)
+\S4method{plot}{PiecewiseLinearFuzzyNumber,missing}(x, y, from=NULL, to=NULL,
+draw.membership.function=TRUE, draw.alphacuts=!draw.membership.function,
+xlab=NULL, ylab=NULL, xlim=NULL, ylim=NULL,
+type="l", col=1, lty=1, pch=1, lwd=1, add=FALSE, ...)
 
-  \S4method{plot}{DiscontinuousFuzzyNumber,missing}(x, y,
-    from=NULL, to=NULL, n=101,
-    draw.membership.function=TRUE,
-    draw.alphacuts=!draw.membership.function, xlab=NULL,
-    ylab=NULL, xlim=NULL, ylim=NULL, type="l", col=1,
-    lty=1, pch=1, lwd=1, add=FALSE, ...)
+\S4method{plot}{DiscontinuousFuzzyNumber,missing}(x, y, from=NULL, to=NULL,
+n=101, draw.membership.function=TRUE, draw.alphacuts=!draw.membership.function,
+xlab=NULL, ylab=NULL, xlim=NULL, ylim=NULL,
+type="l", col=1, lty=1, pch=1, lwd=1,
+add=FALSE, ...)
 }
 \arguments{
   \item{x}{a fuzzy number}
@@ -91,16 +87,15 @@
   \code{\link{plot.default}}}
 }
 \value{
-  nothing really interesting
+Returns nothing really interesting.
 }
 \description{
-  The function aims to provide a similar look-and-feel to
-  the built-in \code{\link{plot.default}} and
-  \code{\link{curve}} function.
+The function aims to provide a similar look-and-feel to the
+built-in \code{\link{plot.default}} and \code{\link{curve}}
+function.
 }
 \details{
-  Note that if \code{from > a1} then it is set to
-  \code{a1}.
+Note that if \code{from > a1} then it is set to \code{a1}.
 }
 \examples{
 plot(FuzzyNumber(0,1,2,3), col="gray")
@@ -108,47 +103,211 @@ plot(FuzzyNumber(0,1,2,3, left=function(x) x^2, right=function(x) 1-x^3), add=TR
 plot(FuzzyNumber(0,1,2,3, lower=function(x) x, upper=function(x) 1-x), add=TRUE, col=2)
 }
 \seealso{
-  Other DiscontinuousFuzzyNumber-method:
-  \code{\link{DiscontinuousFuzzyNumber}},
-  \code{\link{DiscontinuousFuzzyNumber-class}},
-  \code{\link{distance}}, \code{\link{integrateAlpha}}
+Other DiscontinuousFuzzyNumber-method:
+\code{\link{DiscontinuousFuzzyNumber-class}};
+\code{\link{DiscontinuousFuzzyNumber}};
+\code{\link{distance}},
+\code{\link{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,DiscontinuousFuzzyNumber,FuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,FuzzyNumber-method}};
+\code{\link{integrateAlpha}},
+\code{\link{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}},
+\code{\link{integrateAlpha,FuzzyNumber,character,numeric,numeric-method}}
 
-  Other FuzzyNumber-method: \code{\link{alphacut}},
-  \code{\link{alphaInterval}}, \code{\link{ambiguity}},
-  \code{\link{Arithmetic}}, \code{\link{as.character}},
-  \code{\link{as.FuzzyNumber}},
-  \code{\link{as.PiecewiseLinearFuzzyNumber}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{core}}, \code{\link{distance}},
-  \code{\link{evaluate}}, \code{\link{expectedInterval}},
-  \code{\link{expectedValue}}, \code{\link{FuzzyNumber}},
-  \code{\link{FuzzyNumber-class}},
-  \code{\link{integrateAlpha}},
-  \code{\link{piecewiseLinearApproximation}},
-  \code{\link{show}}, \code{\link{supp}},
-  \code{\link{trapezoidalApproximation}},
-  \code{\link{value}}, \code{\link{weightedExpectedValue}},
-  \code{\link{width}}
+Other FuzzyNumber-method:
+\code{\link{*,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{*,TrapezoidalFuzzyNumber,numeric-method}},
+\code{\link{*,numeric,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{+,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{+,numeric,FuzzyNumber-method}},
+\code{\link{-,FuzzyNumber,ANY-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{-,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{-,numeric,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{Arithmetic}}; \code{\link{FuzzyNumber-class}};
+\code{\link{FuzzyNumber}}; \code{\link{alphaInterval}},
+\code{\link{alphaInterval,FuzzyNumber-method}},
+\code{\link{alphaInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{alphaInterval,PowerFuzzyNumber-method}},
+\code{\link{alphaInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{alphacut}},
+\code{\link{alphacut,FuzzyNumber,numeric-method}};
+\code{\link{ambiguity}},
+\code{\link{ambiguity,FuzzyNumber-method}};
+\code{\link{as.FuzzyNumber}},
+\code{\link{as.FuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.FuzzyNumber,numeric-method}};
+\code{\link{as.PiecewiseLinearFuzzyNumber}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,numeric-method}};
+\code{\link{as.PowerFuzzyNumber}},
+\code{\link{as.PowerFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,numeric-method}};
+\code{\link{as.TrapezoidalFuzzyNumber}},
+\code{\link{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,numeric-method}};
+\code{\link{as.character}},
+\code{\link{as.character,FuzzyNumber-method}},
+\code{\link{as.character,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.character,PowerFuzzyNumber-method}},
+\code{\link{as.character,TrapezoidalFuzzyNumber-method}};
+\code{\link{core}}, \code{\link{core,FuzzyNumber-method}};
+\code{\link{distance}},
+\code{\link{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,DiscontinuousFuzzyNumber,FuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,DiscontinuousFuzzyNumber-method}},
+\code{\link{distance,FuzzyNumber,FuzzyNumber-method}};
+\code{\link{evaluate}},
+\code{\link{evaluate,FuzzyNumber,numeric-method}};
+\code{\link{expectedInterval}},
+\code{\link{expectedInterval,FuzzyNumber-method}},
+\code{\link{expectedInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{expectedInterval,PowerFuzzyNumber-method}},
+\code{\link{expectedInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{expectedValue}},
+\code{\link{expectedValue,FuzzyNumber-method}};
+\code{\link{integrateAlpha}},
+\code{\link{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}},
+\code{\link{integrateAlpha,FuzzyNumber,character,numeric,numeric-method}};
+\code{\link{piecewiseLinearApproximation}},
+\code{\link{piecewiseLinearApproximation,FuzzyNumber-method}};
+\code{\link{show}}, \code{\link{show,FuzzyNumber-method}};
+\code{\link{supp}}, \code{\link{supp,FuzzyNumber-method}};
+\code{\link{trapezoidalApproximation}},
+\code{\link{trapezoidalApproximation,FuzzyNumber-method}};
+\code{\link{value}},
+\code{\link{value,FuzzyNumber-method}};
+\code{\link{weightedExpectedValue}},
+\code{\link{weightedExpectedValue,FuzzyNumber-method}};
+\code{\link{width}}, \code{\link{width,FuzzyNumber-method}}
 
-  Other PiecewiseLinearFuzzyNumber-method:
-  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
-  \code{\link{as.character}},
-  \code{\link{as.PiecewiseLinearFuzzyNumber}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{expectedInterval}}, \code{\link{fapply}},
-  \code{\link{PiecewiseLinearFuzzyNumber}},
-  \code{\link{PiecewiseLinearFuzzyNumber-class}}
+Other PiecewiseLinearFuzzyNumber-method:
+\code{\link{*,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{*,TrapezoidalFuzzyNumber,numeric-method}},
+\code{\link{*,numeric,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{+,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{+,numeric,FuzzyNumber-method}},
+\code{\link{-,FuzzyNumber,ANY-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{-,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{-,numeric,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{Arithmetic}};
+\code{\link{PiecewiseLinearFuzzyNumber-class}};
+\code{\link{PiecewiseLinearFuzzyNumber}};
+\code{\link{alphaInterval}},
+\code{\link{alphaInterval,FuzzyNumber-method}},
+\code{\link{alphaInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{alphaInterval,PowerFuzzyNumber-method}},
+\code{\link{alphaInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{as.PiecewiseLinearFuzzyNumber}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,numeric-method}};
+\code{\link{as.PowerFuzzyNumber}},
+\code{\link{as.PowerFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,numeric-method}};
+\code{\link{as.TrapezoidalFuzzyNumber}},
+\code{\link{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,numeric-method}};
+\code{\link{as.character}},
+\code{\link{as.character,FuzzyNumber-method}},
+\code{\link{as.character,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.character,PowerFuzzyNumber-method}},
+\code{\link{as.character,TrapezoidalFuzzyNumber-method}};
+\code{\link{expectedInterval}},
+\code{\link{expectedInterval,FuzzyNumber-method}},
+\code{\link{expectedInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{expectedInterval,PowerFuzzyNumber-method}},
+\code{\link{expectedInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{fapply}},
+\code{\link{fapply,PiecewiseLinearFuzzyNumber,function-method}}
 
-  Other TrapezoidalFuzzyNumber-method:
-  \code{\link{alphaInterval}}, \code{\link{Arithmetic}},
-  \code{\link{as.PiecewiseLinearFuzzyNumber}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{expectedInterval}},
-  \code{\link{TrapezoidalFuzzyNumber}},
-  \code{\link{TrapezoidalFuzzyNumber-class}},
-  \code{\link{TriangularFuzzyNumber}}
+Other TrapezoidalFuzzyNumber-method:
+\code{\link{*,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{*,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{*,TrapezoidalFuzzyNumber,numeric-method}},
+\code{\link{*,numeric,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{+,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{+,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{+,numeric,FuzzyNumber-method}},
+\code{\link{-,FuzzyNumber,ANY-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{-,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{-,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{-,numeric,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{/,PiecewiseLinearFuzzyNumber,numeric-method}},
+\code{\link{Arithmetic}};
+\code{\link{TrapezoidalFuzzyNumber-class}};
+\code{\link{TrapezoidalFuzzyNumber}};
+\code{\link{TriangularFuzzyNumber}};
+\code{\link{alphaInterval}},
+\code{\link{alphaInterval,FuzzyNumber-method}},
+\code{\link{alphaInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{alphaInterval,PowerFuzzyNumber-method}},
+\code{\link{alphaInterval,TrapezoidalFuzzyNumber-method}};
+\code{\link{as.PiecewiseLinearFuzzyNumber}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PiecewiseLinearFuzzyNumber,numeric-method}};
+\code{\link{as.PowerFuzzyNumber}},
+\code{\link{as.PowerFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.PowerFuzzyNumber,numeric-method}};
+\code{\link{as.TrapezoidalFuzzyNumber}},
+\code{\link{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}},
+\code{\link{as.TrapezoidalFuzzyNumber,numeric-method}};
+\code{\link{expectedInterval}},
+\code{\link{expectedInterval,FuzzyNumber-method}},
+\code{\link{expectedInterval,PiecewiseLinearFuzzyNumber-method}},
+\code{\link{expectedInterval,PowerFuzzyNumber-method}},
+\code{\link{expectedInterval,TrapezoidalFuzzyNumber-method}}
 }
 

@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -20,17 +20,17 @@
 
 #' @title
 #' Evaluate the Membership Function
-#' 
+#'
 #' @description
 #' This function returns the value(s) of the membership function
 #' of a fuzzy number at given point(s).
 #'
-#' 
+#'
 #' @param object a fuzzy numbers
 #' @param x numeric vector
-#' 
-#' @return a numeric vector
-#' 
+#'
+#' @return Returns a numeric vector.
+#'
 #' @exportMethod evaluate
 #' @docType methods
 #' @name evaluate
@@ -63,4 +63,3 @@ setMethod(
       y
    }
 )
-

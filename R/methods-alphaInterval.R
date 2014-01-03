@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -27,16 +27,19 @@
 #' @description
 #' We have \eqn{\alpha-Int(A) := [\int_0^1 \alpha A_L(\alpha)\,d\alpha, \int_0^1 \alpha A_U(\alpha)\,d\alpha]
 #' }{\alpha-Int(A) := [int_0^1 \alpha A_L(\alpha) d\alpha, int_0^1 \alpha A_U(\alpha) d\alpha]}.
-#' 
+#'
 #' @details
-#' Note that if an instance of the \code{FuzzyNumber} or \code{DiscontinuousFuzzyNumber} class
+#' Note that if an instance of the \code{FuzzyNumber} or 
+#' \code{DiscontinuousFuzzyNumber} class
 #' is given, the calculation is performed via numerical integration.
 #' Otherwise, the computation is exact.
-#' 
+#'
 #' @param object a fuzzy number
-#' @param ... for \code{FuzzyNumber} and \code{DiscontinuousFuzzyNumber} - additional arguments passed to \code{\link{integrateAlpha}}
-#' @return numeric vector of length 2
+#' @param ... for \code{FuzzyNumber} and \code{DiscontinuousFuzzyNumber}
+#'  - additional arguments passed to \code{\link{integrateAlpha}}
 #' 
+#' @return Returns numeric vector of length 2.
+#'
 #' @exportMethod alphaInterval
 #' @docType methods
 #' @name alphaInterval
@@ -46,16 +49,16 @@
 #' @family PowerFuzzyNumber-method
 #' @rdname alphaInterval-methods
 #' @aliases alphaInterval,FuzzyNumber-method
-#' @aliases alphaInterval,TrapezoidalFuzzyNumber-method
-#' @aliases alphaInterval,PiecewiseLinearFuzzyNumber-method
-#' @aliases alphaInterval,PowerFuzzyNumber-method
+#'          alphaInterval,TrapezoidalFuzzyNumber-method
+#'          alphaInterval,PiecewiseLinearFuzzyNumber-method
+#'          alphaInterval,PowerFuzzyNumber-method
 #' @usage
 #' \S4method{alphaInterval}{FuzzyNumber}(object, ...)
-#' 
+#'
 #' \S4method{alphaInterval}{TrapezoidalFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{alphaInterval}{PiecewiseLinearFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{alphaInterval}{PowerFuzzyNumber}(object)
 setGeneric("alphaInterval",
    function(object, ...) standardGeneric("alphaInterval"))
@@ -109,7 +112,7 @@ setMethod(
       dxr <- diff(xr)
       dal <- diff(al)
       dar <- diff(ar)
-      
+
       return(c(
           sum( diff(al^2)*(xl[-object@knot.n-2]-al[-object@knot.n-2]*dxl/dal)/2+diff(al^3)*dxl/dal/3 ),
          -sum( diff(ar^2)*(xr[-object@knot.n-2]-ar[-object@knot.n-2]*dxr/dar)/2+diff(ar^3)*dxr/dar/3 )
@@ -130,4 +133,3 @@ setMethod(
       ))
    }
 )
-

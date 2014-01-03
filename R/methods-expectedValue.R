@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -24,16 +24,17 @@
 #' @description
 #' The calculation of the so-called expected value is one of possible methods to
 #' deffuzify a fuzzy number.
-#' 
+#'
 #' @details
 #' The expected value of \eqn{A} is defined as
 #' \eqn{EV(A) := (EI_U(A) + EI_L(A))/2}{EV(A) := (EI_U(A) + EI_L(A))/2},
 #' where \eqn{EI} is the \code{\link{expectedInterval}.}
-#' 
+#'
 #' @param object a fuzzy number
 #' @param ... additional arguments passed to \code{\link{expectedInterval}}
-#' @return a single numeric value
 #' 
+#' @return Returns a single numeric value.
+#'
 #' @exportMethod expectedValue
 #' @docType methods
 #' @name expectedValue

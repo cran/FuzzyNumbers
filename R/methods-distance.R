@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -33,10 +33,10 @@
 #' @param e2 a fuzzy number
 #' @param type one of \code{"Euclidean"}, \code{"EuclideanSquared"}
 #' @param ... additional arguments passed to \code{\link{integrate}}
-#' 
-#' @return the calculated distance, single numeric value
-#' 
-#' 
+#'
+#' @return Returns the calculated distance, i.e. a single numeric value.
+#'
+#'
 #' @exportMethod distance
 #' @docType methods
 #' @name distance
@@ -44,22 +44,22 @@
 #' @family DiscontinuousFuzzyNumber-method
 #' @rdname distance-methods
 #' @aliases distance,FuzzyNumber,FuzzyNumber-method
-#' @aliases distance,DiscontinuousFuzzyNumber,FuzzyNumber-method
-#' @aliases distance,FuzzyNumber,DiscontinuousFuzzyNumber-method
-#' @aliases distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method
-#' 
+#'          distance,DiscontinuousFuzzyNumber,FuzzyNumber-method
+#'          distance,FuzzyNumber,DiscontinuousFuzzyNumber-method
+#'          distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method
+#'
 #' @usage
 #' \S4method{distance}{FuzzyNumber,FuzzyNumber}(e1, e2, type=c("Euclidean", "EuclideanSquared"), ...)
-#' 
+#'
 #' \S4method{distance}{FuzzyNumber,DiscontinuousFuzzyNumber}(e1, e2, type=c("Euclidean", "EuclideanSquared"), ...)
-#' 
+#'
 #' \S4method{distance}{DiscontinuousFuzzyNumber,FuzzyNumber}(e1, e2, type=c("Euclidean", "EuclideanSquared"), ...)
-#' 
+#'
 #' \S4method{distance}{DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber}(e1, e2, type=c("Euclidean", "EuclideanSquared"), ...)
-#' 
+#'
 #' @references
 #' Grzegorzewski P., Metrics and orders in space of fuzzy numbers,
-#' Fuzzy Sets and Systems 97, 1998, pp. 83-94.\cr
+#' Fuzzy Sets and Systems 97, 1998, pp. 83-94.
 setGeneric("distance",
            function(e1, e2, ...) standardGeneric("distance"))
 
@@ -73,7 +73,7 @@ setMethod(
    {
       if (is.na(e1@lower(0)) || is.na(e2@lower(0))) return(NA_real_)
       type = match.arg(type)
-      
+
       if (type == "Euclidean" || type == "EuclideanSquared")
       {
          dL <- integrate(function(alpha) {
@@ -81,13 +81,13 @@ setMethod(
                -e2@a1-(e2@a2-e2@a1)*e2@lower(alpha)
             )^2
          }, 0, 1, ...)$value
-         
+
          dU <- integrate(function(alpha) {
             (  e1@a3+(e1@a4-e1@a3)*e1@upper(alpha)
                -e2@a3-(e2@a4-e2@a3)*e2@upper(alpha)
             )^2
          }, 0, 1, ...)$value
-         
+
          if (type == "Euclidean") return (sqrt(dL+dU)) else return (dL+dU)
       } else
       {
@@ -177,5 +177,3 @@ setMethod(
       }
    }
 )
-
-

@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -23,17 +23,18 @@
 #'
 #' @description
 #' The width (Chanas, 2001) is a measure of nonspecificity of a fuzzy number.
-#' 
+#'
 #' @details
 #' The width of \eqn{A} is defined as
 #' \eqn{width(A) := EI_U(A) - EI_L(A)},
 #' where \eqn{EI} is the \code{\link{expectedInterval}}.
-#' 
+#'
 #' @param object a fuzzy number
 #' @param ... additional arguments passed to \code{\link{expectedInterval}}
-#' @return a single numeric value
 #' 
-#' 
+#' @return Returns a single numeric value.
+#'
+#'
 #' @exportMethod width
 #' @docType methods
 #' @name width
@@ -45,7 +46,7 @@
 #' \S4method{width}{FuzzyNumber}(object, ...)
 #' @references
 #' Chanas S. (2001), On the interval approximation of a fuzzy number,
-#' Fuzzy Sets and Systems 122, pp. 353-356.\cr
+#' Fuzzy Sets and Systems 122, pp. 353-356.
 setGeneric("width",
            function(object, ...) standardGeneric("width"))
 
@@ -60,4 +61,3 @@ setMethod(
       return(diff(expectedInterval(object, ...)))
    }
 )
-

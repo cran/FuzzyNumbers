@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -23,18 +23,19 @@
 #'
 #' @description
 #' See \code{\link{as.character}} for more details.
-#' 
+#'
 #' @details
 #' The method \code{\link{as.character}} is called on given fuzzy number
 #' object with default arguments.
 #' The results are printed on \code{stdout}.
-#' 
+#'
 #' @param object a fuzzy number
-#' @return nothing interesting
 #' 
+#' @return Does not return anything interesting.
+#'
 #' @usage
 #' \S4method{show}{FuzzyNumber}(object)
-#' 
+#'
 #' @exportMethod show
 #' @name show
 #' @aliases show,FuzzyNumber-method

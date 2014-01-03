@@ -2,7 +2,7 @@
 \alias{convertSide}
 \title{Convert a Given Side Function to Side Generating Function}
 \usage{
-  convertSide(f, x1, x2)
+convertSide(f, x1, x2)
 }
 \arguments{
   \item{f}{a function defined on [x1,x2]}
@@ -14,19 +14,19 @@
   first element is used}
 }
 \value{
-  a new function defined on [0,1] (scaled input)
+Returns a new function defined on [0,1] (scaled input).
 }
 \description{
-  The resulting function linearly scales the input and
-  passes it to the original function.
+The resulting function linearly scales the input and passes
+it to the original function.
 }
 \details{
-  The function works for x1<x2 and x1>x2.
+The function works for x1<x2 and x1>x2.
 }
 \seealso{
-  \code{\linkS4class{FuzzyNumber}}
+\code{\linkS4class{FuzzyNumber}}
 
-  Other auxiliary: \code{\link{approxInvert}},
-  \code{\link{convertAlpha}}
+Other auxiliary: \code{\link{approxInvert}};
+\code{\link{convertAlpha}}
 }
 

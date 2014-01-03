@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -25,19 +25,21 @@
 #' We have \eqn{EI(A) := [\int_0^1  A_L(\alpha)\,d\alpha,\int_0^1  A_U(\alpha)\,d\alpha]
 #' }{EI(A) := [int_0^1  A_L(\alpha) d\alpha, int_0^1  A_U(\alpha) d\alpha]},
 #' see (Duboid, Prade, 1987).
-#' 
+#'
 #' @details
 #' Note that if an instance of the \code{FuzzyNumber} or \code{DiscontinuousFuzzyNumber} class
 #' is given, the calculation is performed via numerical integration.
 #' Otherwise, the computation is exact.
-#' 
+#'
 #' @param object a fuzzy number
 #' @param ... for \code{FuzzyNumber} and \code{DiscontinuousFuzzyNumber} - additional arguments passed to \code{\link{integrateAlpha}}
-#' @return numeric vector of length 2
 #' 
+#' @return Returns a numeric vector of length 2.
+#'
 #' @references
-#' Dubois D., Prade H. (1987), The mean value of a fuzzy number, Fuzzy Sets and Systems 24, pp. 279-300.\cr
-#' 
+#' Dubois D., Prade H. (1987), The mean value of a fuzzy number,
+#'  Fuzzy Sets and Systems 24, pp. 279-300.
+#'
 #' @exportMethod expectedInterval
 #' @docType methods
 #' @name expectedInterval
@@ -47,16 +49,16 @@
 #' @family PowerFuzzyNumber-method
 #' @rdname expectedInterval-methods
 #' @aliases expectedInterval,FuzzyNumber-method
-#' @aliases expectedInterval,TrapezoidalFuzzyNumber-method
-#' @aliases expectedInterval,PiecewiseLinearFuzzyNumber-method
-#' @aliases expectedInterval,PowerFuzzyNumber-method
+#'          expectedInterval,TrapezoidalFuzzyNumber-method
+#'          expectedInterval,PiecewiseLinearFuzzyNumber-method
+#'          expectedInterval,PowerFuzzyNumber-method
 #' @usage
 #' \S4method{expectedInterval}{FuzzyNumber}(object, ...)
-#' 
+#'
 #' \S4method{expectedInterval}{TrapezoidalFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{expectedInterval}{PiecewiseLinearFuzzyNumber}(object)
-#' 
+#'
 #' \S4method{expectedInterval}{PowerFuzzyNumber}(object)
 setGeneric("expectedInterval",
            function(object, ...) standardGeneric("expectedInterval"))
@@ -105,7 +107,7 @@ setMethod(
       xr <- c(object@a3, object@knot.right, object@a4)
       dal <- diff(c(0,     object@knot.alpha,  1))
       dar <- diff(c(1, rev(object@knot.alpha), 0))
-      
+
       return(c(
          sum( (xl[-object@knot.n-2]+0.5*diff(xl))*dal ),
          sum(-(xr[-object@knot.n-2]+0.5*diff(xr))*dar )
@@ -126,4 +128,3 @@ setMethod(
       ))
    }
 )
-

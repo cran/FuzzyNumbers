@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 
 
 #' @title Tools to Deal with Fuzzy Numbers
-#' 
+#'
 #' @description
 #' \pkg{FuzzyNumbers} is an open source (LGPL 3) package for R.
 #' It provides S4 classes and methods to deal with Fuzzy Numbers.
@@ -54,7 +54,7 @@
 #'      \code{\link{value}}, \code{\link{trapezoidalApproximation}},
 #'      \code{\link{piecewiseLinearApproximation}}),
 #'    \item Visualization of FNs (see \code{\link{plot}}, \code{\link{as.character}}),
-#'    \item Basic operations on FNs (see e.g. \code{\link{fapply}}),
+#'    \item Basic operations on FNs (see e.g. \code{\link{fapply}} and \link{Arithmetic}),
 #'    \item Aggregation of FNs **TO DO**,
 #'    \item Ranking of FNs **TO DO**,
 #'    \item Random FN generation **TO DO**,
@@ -62,15 +62,12 @@
 #' }
 #'
 #' Please feel free to send any comments and feature requests to the author
-#' (see his homepage at \url{http://staff.rexamine.com/gagolews/}).
+#' (see his homepage at \url{http://gagolewski.rexamine.com/}).
 #'
 #' For a complete list of classes and methods
 #' call \code{help(package="FuzzyNumbers")}.
 #' Moreover, you will surely be interested in a step-by-step guide to the
-#' package usage and features which is available by calling
-#' \code{vignette('FuzzyNumbers-Tutorial', 'FuzzyNumbers')}
-#' or at
-#' \url{http://github.com/Rexamine/FuzzyNumbers/raw/master/inst/doc/FuzzyNumbers-Tutorial.pdf}.
+#' package usage and features which is available at the project's webpage.
 #' \cr\cr
 #'
 #'
@@ -82,42 +79,62 @@
 #' \bold{Acknowledgments}: Many thanks to Jan Caha,
 #' Przemyslaw Grzegorzewski, Lucian Coroianu, and Pablo Villacorta Iglesias
 #'  for stimulating discussion.
-#'  
+#'
 #'  The development of the package in March-June 2013 was partially supported
-#'  by the European Union from resources of the European Social Fund, Project PO KL 
+#'  by the European Union from resources of the European Social Fund, Project PO KL
 #'  ``Information technologies: Research and their interdisciplinary
 #'  applications'', agreement UDA-POKL.04.01.01-00-051/10-00.
-#' 
+#'
 #' @name FuzzyNumbers-package
 #' @docType package
 #' @author Marek Gagolewski \email{gagolews@@rexamine.com},\cr
 #'  with contributions from Jan Caha
 #' @references
-#' \pkg{FuzzyNumbers} Homepage, \url{http://www.rexamine.com/resources/fuzzynumbers/}.\cr
+#' \pkg{FuzzyNumbers} Homepage, \url{http://FuzzyNumbers.rexamine.com/}.
+#' 
 #' Ban A.I. (2008), Approximation of fuzzy numbers by trapezoidal fuzzy numbers
-#' preserving the expected interval, Fuzzy Sets and Systems 159, pp. 1327-1344.\cr
+#' preserving the expected interval, Fuzzy Sets and Systems 159, pp. 1327-1344.
+#' 
 #' Ban A.I. (2009), On the nearest parametric approximation of a fuzzy number - Revisited,
-#' Fuzzy Sets and Systems 160, pp. 3027--3047.\cr
+#' Fuzzy Sets and Systems 160, pp. 3027-3047.
+#' 
 #' Chanas S. (2001), On the interval approximation of a fuzzy number,
-#' Fuzzy Sets and Systems 122, pp. 353-356.\cr
+#' Fuzzy Sets and Systems 122, pp. 353-356.
+#' 
 #' Coroianu L., Gagolewski M., Grzegorzewski P. (2013),
-#' Nearest Piecewise Linear Approximation of Fuzzy Numbers, Fuzzy Sets and Systems, 2013, doi:10.1016/j.fss.2013.02.005.\cr
-#' Delgado M., Vila M.A., Voxman W. (1998), On a canonical representation of a fuzzy number,
-#' Fuzzy Sets and Systems 93, pp. 125-135.\cr
-#' Dubois D., Prade H. (1978), Operations on fuzzy numbers, Int. J. Syst. Sci. 9, pp. 613-626.\cr
-#' Dubois D., Prade H. (1987), The mean value of a fuzzy number, Fuzzy Sets and Systems 24, pp. 279-300.\cr
-#' Gagolewski M. (2013), A Guide to the \pkg{FuzzyNumbers} Package for R,
-#' \url{http://github.com/Rexamine/FuzzyNumbers/raw/master/inst/doc/FuzzyNumbers-Tutorial.pdf}.\cr
+#' Nearest Piecewise Linear Approximation of Fuzzy Numbers,
+#' Fuzzy Sets and Systems 233, pp. 26-51.
+#' 
+#' Delgado M., Vila M.A., Voxman W. (1998), 
+#' On a canonical representation of a fuzzy number,
+#' Fuzzy Sets and Systems 93, pp. 125-135.
+#' 
+#' Dubois D., Prade H. (1978), Operations on fuzzy numbers, 
+#' Int. J. Syst. Sci. 9, pp. 613-626.
+#' 
+#' Dubois D., Prade H. (1987), The mean value of a fuzzy number, 
+#' Fuzzy Sets and Systems 24, pp. 279-300.
+#' 
 #' Grzegorzewski P. (2010), Algorithms for trapezoidal approximations of fuzzy numbers
 #' preserving the expected interval, In: Bouchon-Meunier B. et al (Eds.),
-#' Foundations of Reasoning Under Uncertainty, Springer, pp. 85-98.\cr
+#' Foundations of Reasoning Under Uncertainty, Springer, pp. 85-98.
+#' 
 #' Grzegorzewski P. (1998), Metrics and orders in space of fuzzy numbers,
-#' Fuzzy Sets and Systems 97, pp. 83-94.\cr
-#' Grzegorzewski P,. Pasternak-Winiarska K. (2011), Trapezoidal approximations of fuzzy numbers
-#' with restrictions on the support and core, Proc. EUSFLAT/LFA 2011, Atlantic Press, pp. 749-756.\cr
-#' Klir G.J., Yuan B. (1995), Fuzzy sets and fuzzy logic. Theory and applications, Prentice Hall, New Jersey.\cr
-#' Stefanini L., Sorini L. (2009), Fuzzy arithmetic with parametric LR fuzzy numbers,
-#' In: Proc. IFSA/EUSFLAT 2009, pp. 600-605.\cr
-#' Yeh C.-T. (2008), Trapezoidal and triangular approximations preserving the expected interval,
-#' Fuzzy Sets and Systems 159, pp. 1345-1353.\cr
+#' Fuzzy Sets and Systems 97, pp. 83-94.
+#' 
+#' Grzegorzewski P,. Pasternak-Winiarska K. (2011), 
+#' Trapezoidal approximations of fuzzy numbers
+#' with restrictions on the support and core,
+#'  Proc. EUSFLAT/LFA 2011, Atlantic Press, pp. 749-756.
+#' 
+#' Klir G.J., Yuan B. (1995), Fuzzy sets and fuzzy logic. 
+#' Theory and applications, Prentice Hall, New Jersey.
+#' 
+#' Stefanini L., Sorini L. (2009), Fuzzy arithmetic with 
+#' parametric LR fuzzy numbers,
+#' In: Proc. IFSA/EUSFLAT 2009, pp. 600-605.
+#' 
+#' Yeh C.-T. (2008), Trapezoidal and triangular approximations 
+#' preserving the expected interval,
+#' Fuzzy Sets and Systems 159, pp. 1345-1353.
 invisible(NULL)

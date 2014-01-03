@@ -1,6 +1,6 @@
 ## This file is part of the FuzzyNumbers library.
 ##
-## Copyright 2012-2013 Marek Gagolewski
+## Copyright 2012-2014 Marek Gagolewski
 ##
 ##
 ## FuzzyNumbers is free software: you can redistribute it and/or modify
@@ -23,24 +23,24 @@
 #'
 #' @description
 #' For possible slot names see man pages for the \linkS4class{FuzzyNumber} class and its derivatives
-#' 
+#'
 #' @details
 #' All slot accessors are read-only.
-#' 
+#'
 #' @param x a fuzzy number
 #' @param i character; slot name
-#' 
-#' @return slot value
-#' 
+#'
+#' @return Returns the slot value.
+#'
 #' @usage
 #' \S4method{[}{FuzzyNumber,character}(x, i)
-#' 
+#'
 #' \S4method{[}{PiecewiseLinearFuzzyNumber,character}(x, i)
-#' 
+#'
 #' \S4method{[}{PowerFuzzyNumber,character}(x, i)
-#' 
+#'
 #' \S4method{[}{DiscontinuousFuzzyNumber,character}(x, i)
-#' 
+#'
 #' @name Extract
 #' @rdname Extract-methods
 #' @docType methods
@@ -50,9 +50,9 @@
 #' @family DiscontinuousFuzzyNumber,character-method
 #' @exportMethod [
 #' @aliases [,FuzzyNumber,character-method
-#' @aliases [,PiecewiseLinearFuzzyNumber,character-method
-#' @aliases [,PowerFuzzyNumber,character-method
-#' @aliases [,DiscontinuousFuzzyNumber,character-method
+#'          [,PiecewiseLinearFuzzyNumber,character-method
+#'          [,PowerFuzzyNumber,character-method
+#'          [,DiscontinuousFuzzyNumber,character-method
 #' @examples
 #' A <- FuzzyNumber(1,2,3,4)
 #' A["a1"]
@@ -66,7 +66,7 @@ setMethod(
    signature(x="FuzzyNumber", i="character"),
    definition=function(x, i)
    {
-      switch(i, 
+      switch(i,
              "a1"    = x@a1,
              "a2"    = x@a2,
              "a3"    = x@a3,
@@ -86,7 +86,7 @@ setMethod(
    signature(x="PiecewiseLinearFuzzyNumber", i="character"),
    definition=function(x, i)
    {
-      switch(i, 
+      switch(i,
              "a1"    = x@a1,
              "a2"    = x@a2,
              "a3"    = x@a3,
@@ -125,7 +125,7 @@ setMethod(
    signature(x="PowerFuzzyNumber", i="character"),
    definition=function(x, i)
    {
-      switch(i, 
+      switch(i,
              "a1"    = x@a1,
              "a2"    = x@a2,
              "a3"    = x@a3,
@@ -149,7 +149,7 @@ setMethod(
    signature(x="DiscontinuousFuzzyNumber", i="character"),
    definition=function(x, i)
    {
-      switch(i, 
+      switch(i,
              "a1"    = x@a1,
              "a2"    = x@a2,
              "a3"    = x@a3,

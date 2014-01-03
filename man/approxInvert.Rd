@@ -2,8 +2,7 @@
 \alias{approxInvert}
 \title{Approximate the Inverse of a Given Function}
 \usage{
-  approxInvert(f,
-    method = c("monoH.FC", "linear", "hyman"), n = 500)
+approxInvert(f, method = c("monoH.FC", "linear", "hyman"), n = 500)
 }
 \arguments{
   \item{f}{a monotonic, continuous function f:
@@ -15,20 +14,21 @@
   \item{n}{number of interpolation points}
 }
 \value{
-  a new function, the approximate inverse of the input
+Returns a new function, the approximate inverse of the
+input.
 }
 \description{
-  The function may be used to create side generating
-  functions from alpha-cut generators and inversely.
+The function may be used to create side generating
+functions from alpha-cut generators and inversely.
 }
 \details{
-  The function is a wrapper to \link{splinefun} and
-  \link{approxfun}. Thus, interpolation is used.
+The function is a wrapper to \link{splinefun} and
+\link{approxfun}. Thus, interpolation is used.
 }
 \seealso{
-  \code{\linkS4class{FuzzyNumber}}
+\code{\linkS4class{FuzzyNumber}}
 
-  Other auxiliary: \code{\link{convertAlpha}},
-  \code{\link{convertSide}}
+Other auxiliary: \code{\link{convertAlpha}};
+\code{\link{convertSide}}
 }
 
