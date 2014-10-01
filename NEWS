@@ -3,6 +3,17 @@
 
 ***************************************************************************
 
+0.3-5 /2014-10-01/
+
+* added proper import directives in NAMESPACE
+
+* piecewiseLinearApproximation: method="ApproximateNearestEuclidean"
+  no longer accepted; use "NearestEuclidean" instead.
+
+* package vignette now in the vignettes/ directory.
+
+***************************************************************************
+
 0.3-3 /2014-01-03/
 
 * piecewiseLinearApproximation() now supports new method="SupportCorePreserving",
