@@ -447,6 +447,19 @@ par(mar=c(4,4,2,1))
 plot(fapply(A, function(x) log(x+1)^0.5), xlab=expression(x), ylab=expression(alpha))
 legend('topleft', expression(sqrt(log(A+1))), lty=1)
 
+## ----exponential,fig.keep='none'---------------------------------------
+A <- as.PiecewiseLinearFuzzyNumber(TrapezoidalFuzzyNumber(-2,-1,-1,2), knot.n=10)
+plot(A, xlim=c(-8,8))
+plot(A^2, add=TRUE, col=2, lty=2)
+plot(A^3, add=TRUE, col=4, lty=4)
+
+## ----exponentialFig,dependson='exponential',echo=FALSE,results='hide'----
+par(mar=c(4,4,2,1))
+plot(A, xlim=c(-8,8), xlab=expression(x), ylab=expression(alpha))
+plot(A^2, add=TRUE, col=2, lty=2)
+plot(A^3, add=TRUE, col=4, lty=4)
+legend('topright', expression(A, A^2, A^3), lty=c(1,2,4), col=c(1,2,4))
+
 ## ----TrapDist----------------------------------------------------------
 T1 <- TrapezoidalFuzzyNumber(-5, 3, 6, 20)
 T2 <- TrapezoidalFuzzyNumber(-4, 4, 7, 21)
@@ -655,4 +668,63 @@ points(c(0, 1), Da[c(1,length(a))], pch=16)
 opt <- optimize(D, interval=c(0,1))
 abline(v=opt$minimum, col="grey", lty=3)
 abline(h=opt$objective, col="grey", lty=3)
+
+## ----compareXY1--------------------------------------------------------
+x = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0.2, 1.0, 2.8))
+y = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0, 1.8, 2.2))
+
+## ----compareXY1plot,dependson='compareXY1'-----------------------------
+plot(x, col=2)
+plot(y, col=4, add=TRUE)
+
+## ----compareXY1c1,dependson='compareXY1'-------------------------------
+possibilityExceedance(x,y)
+necessityExceedance(x,y)
+
+## ----compareXY1c2,dependson='compareXY1'-------------------------------
+possibilityStrictExceedance(x,y)
+necessityStrictExceedance(x,y)
+
+## ----compareXY1c3,dependson='compareXY1'-------------------------------
+possibilityUndervaluation(x,y)
+necessityUndervaluation(x,y)
+possibilityStrictUndervaluation(x,y)
+necessityStrictUndervaluation(x,y)
+
+## ----compareXY2--------------------------------------------------------
+x = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(1.7, 2.7, 2.8), knot.n = 9)
+y = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0, 1.8, 2.2), knot.n = 9)
+min = min(x@a1,y@a1)
+max = max(x@a4,y@a4)
+plot(x, col=2, xlim = c(min,max))
+plot(y, col=4, add=TRUE)
+possibilityExceedance(x,y)
+necessityExceedance(x,y)
+possibilityStrictExceedance(x,y)
+necessityStrictExceedance(x,y)
+possibilityUndervaluation(x,y)
+necessityUndervaluation(x,y)
+possibilityStrictUndervaluation(x,y)
+necessityStrictUndervaluation(x,y)
+
+## ----minmaxXY,fig.keep='none'------------------------------------------
+x = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(-4.8, -3 , -1.5), knot.n = 9)
+y = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(-5.5, -2.5, -1.1), knot.n = 9)
+min = min(x@a1,y@a1)
+max = max(x@a4,y@a4)
+plot(x, col=1, xlim = c(min,max))
+plot(y, col=2, add=TRUE)
+maxFN = maximum(x,y)
+minFN = minimum(x,y)
+plot(minFN, col=4)
+plot(maxFN, col=6, add=TRUE)
+
+## ----minmaxXYFig,dependson='minmaxXY',echo=FALSE,results='hide'--------
+par(mar=c(4,4,2,1))
+plot(x, col=1, xlim = c(min,max))
+plot(y, col=2, add=TRUE)
+legend('topright', expression(x, y), lty=c(1,1), col=c(1,2))
+plot(minFN, col=4)
+plot(maxFN, col=6, add=TRUE)
+legend('topright', expression(min, max), lty=c(1,1), col=c(4,6))
 

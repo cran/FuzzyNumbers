@@ -3,6 +3,22 @@
 
 ***************************************************************************
 
+0.4-1 /2015-02-26/
+
+* added possibility and necessity functions that represent comparison
+  operators <=,<,>,>= (with tests and description in vignette)
+
+* added functions to determine minimum and maximum of two fuzzy numbers
+  (description in vignette)
+
+* added operator ^ for calculation of integer power of
+  PiecewiseLinearFuzzyNumber
+
+* added function arctan2 for calculation of atan2 with
+  PiecewiseLinearFuzzyNumber arguments
+
+***************************************************************************
+
 0.3-5 /2014-10-01/
 
 * added proper import directives in NAMESPACE
