@@ -50,7 +50,7 @@ opts_chunk$set(
    fig.height=6/sqrt(3),
 #    fig.path='figures-knitr/',
 #    cache.path='cache-knitr/',
-   cache=TRUE,
+   cache=FALSE,
    tidy=FALSE,
 #    dev='cairo_pdf',
 #    dev.args=list(pointsize=11),
@@ -68,7 +68,7 @@ opts_chunk$set(
 ## ----eval=FALSE--------------------------------------------------------
 #  install.packages('devtools')
 #  library('devtools')
-#  install_github('FuzzyNumbers', 'Rexamine')
+#  install_github('FuzzyNumbers', 'gagolews')
 
 ## ----libraryFuzzyNumbers,results='hide',warning=FALSE,message=FALSE----
 library('FuzzyNumbers') # Load the package
@@ -226,7 +226,7 @@ par(mar=c(4,4,2,1))
 plot(P1, type='b', xlab=expression(x), ylab=expression(alpha), from=0, to=5, xlim=c(0.5,4.5))
 plot(P2, type='b', col=2, lty=2, pch=2, add=TRUE, from=0, to=5)
 
-## ----PLFNEx1c,dependson='PLFNEx1b',------------------------------------
+## ----PLFNEx1c,dependson='PLFNEx1b'-------------------------------------
 P1['knots']
 P1['allknots'] # including a1,a2,a3,a4
 
@@ -258,7 +258,7 @@ abline(v=P3['knot.left'], col='gray', lty=3)
 abline(v=P3['knot.right'], col='gray', lty=3)
 text(7.5, alpha, parse(text=sprintf('alpha*"="*%g', alpha)), pos=3)
 
-## ----PLFNEx2c,dependson='PLFNEx2b',------------------------------------
+## ----PLFNEx2c,dependson='PLFNEx2b'-------------------------------------
 (as.FuzzyNumber(P3))
 
 ## ----PowerEx1a,fig.keep='none'-----------------------------------------
