@@ -52,4 +52,5 @@ Other characteristics: \code{\link{expectedValue}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{characteristics}

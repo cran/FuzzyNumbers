@@ -2,26 +2,26 @@
 % Please edit documentation in R/methods-Arithmetic.R
 \docType{methods}
 \name{Arithmetic}
-\alias{*,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
-\alias{*,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
-\alias{*,PiecewiseLinearFuzzyNumber,numeric-method}
-\alias{*,TrapezoidalFuzzyNumber,numeric-method}
-\alias{*,numeric,FuzzyNumber-method}
-\alias{+,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
-\alias{+,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
-\alias{+,PiecewiseLinearFuzzyNumber,numeric-method}
-\alias{+,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
-\alias{+,numeric,FuzzyNumber-method}
-\alias{-,FuzzyNumber,ANY-method}
-\alias{-,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
-\alias{-,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
-\alias{-,PiecewiseLinearFuzzyNumber,numeric-method}
-\alias{-,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
-\alias{-,numeric,FuzzyNumber-method}
-\alias{/,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
-\alias{/,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
-\alias{/,PiecewiseLinearFuzzyNumber,numeric-method}
 \alias{Arithmetic}
+\alias{*,numeric,FuzzyNumber-method}
+\alias{+,numeric,FuzzyNumber-method}
+\alias{-,numeric,FuzzyNumber-method}
+\alias{*,TrapezoidalFuzzyNumber,numeric-method}
+\alias{+,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
+\alias{-,TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
+\alias{-,FuzzyNumber,ANY-method}
+\alias{+,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
+\alias{-,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
+\alias{*,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
+\alias{/,PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
+\alias{+,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
+\alias{-,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
+\alias{/,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
+\alias{*,PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
+\alias{+,PiecewiseLinearFuzzyNumber,numeric-method}
+\alias{-,PiecewiseLinearFuzzyNumber,numeric-method}
+\alias{*,PiecewiseLinearFuzzyNumber,numeric-method}
+\alias{/,PiecewiseLinearFuzzyNumber,numeric-method}
 \title{Arithmetic Operations on Fuzzy Numbers}
 \usage{
 \S4method{+}{numeric,FuzzyNumber}(e1, e2) # e2 + e1
@@ -139,4 +139,7 @@ Other TrapezoidalFuzzyNumber-method: \code{\link{TrapezoidalFuzzyNumber-class}},
 Other extension_principle: \code{\link{^,PiecewiseLinearFuzzyNumber,numeric-method}},
   \code{\link{fapply}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{TrapezoidalFuzzyNumber-method}
+\concept{extension_principle}

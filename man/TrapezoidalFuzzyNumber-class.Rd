@@ -27,6 +27,7 @@ are implemented in the package.
 
 Class \code{\linkS4class{FuzzyNumber}}, directly.
 }
+
 \examples{
 showClass("TrapezoidalFuzzyNumber")
 showMethods(classes="TrapezoidalFuzzyNumber")
@@ -45,4 +46,4 @@ Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{expectedInterval}}, \code{\link{plot}}
 }
-
+\concept{TrapezoidalFuzzyNumber-method}

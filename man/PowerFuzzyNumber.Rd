@@ -34,4 +34,4 @@ Other PowerFuzzyNumber-method: \code{\link{PowerFuzzyNumber-class}},
   \code{\link{as.character}},
   \code{\link{expectedInterval}}
 }
-
+\concept{PowerFuzzyNumber-method}

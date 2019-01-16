@@ -26,4 +26,4 @@ linearly scales its output.
 Other auxiliary: \code{\link{approxInvert}},
   \code{\link{convertSide}}
 }
-
+\concept{auxiliary}

@@ -25,4 +25,3 @@ Returns the estimate of the integral.
 \description{
 The function uses multiple calls to \code{\link{integrate}}.
 }
-

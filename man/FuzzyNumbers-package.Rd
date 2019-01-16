@@ -70,10 +70,6 @@ Przemyslaw Grzegorzewski, Lucian Coroianu, and Pablo Villacorta Iglesias
  ``Information technologies: Research and their interdisciplinary
  applications'', agreement UDA-POKL.04.01.01-00-051/10-00.
 }
-\author{
-Marek Gagolewski \email{gagolews@rexamine.com},\cr
- with contributions from Jan Caha
-}
 \references{
 \pkg{FuzzyNumbers} Homepage, \url{http://FuzzyNumbers.rexamine.com/}.
 
@@ -136,4 +132,7 @@ Yeh C.-T. (2008), Trapezoidal and triangular approximations
 preserving the expected interval,
 Fuzzy Sets and Systems 159, pp. 1345-1353.
 }
-
+\author{
+Marek Gagolewski \email{gagolews@rexamine.com},\cr
+ with contributions from Jan Caha
+}

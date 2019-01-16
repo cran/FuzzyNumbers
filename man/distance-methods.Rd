@@ -3,10 +3,10 @@
 \docType{methods}
 \name{distance}
 \alias{distance}
-\alias{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}
+\alias{distance,FuzzyNumber,FuzzyNumber-method}
 \alias{distance,DiscontinuousFuzzyNumber,FuzzyNumber-method}
 \alias{distance,FuzzyNumber,DiscontinuousFuzzyNumber-method}
-\alias{distance,FuzzyNumber,FuzzyNumber-method}
+\alias{distance,DiscontinuousFuzzyNumber,DiscontinuousFuzzyNumber-method}
 \title{Calculate the Distance Between Two Fuzzy Numbers}
 \usage{
 \S4method{distance}{FuzzyNumber,FuzzyNumber}(e1, e2, type=c("Euclidean", "EuclideanSquared"), ...)
@@ -43,10 +43,6 @@ Grzegorzewski P., Metrics and orders in space of fuzzy numbers,
 Fuzzy Sets and Systems 97, 1998, pp. 83-94.
 }
 \seealso{
-Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
-  \code{\link{DiscontinuousFuzzyNumber}},
-  \code{\link{integrateAlpha}}, \code{\link{plot}}
-
 Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{FuzzyNumber-class}},
   \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
@@ -65,5 +61,10 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
-}
 
+Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
+  \code{\link{DiscontinuousFuzzyNumber}},
+  \code{\link{integrateAlpha}}, \code{\link{plot}}
+}
+\concept{DiscontinuousFuzzyNumber-method}
+\concept{FuzzyNumber-method}

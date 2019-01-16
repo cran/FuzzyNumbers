@@ -50,4 +50,5 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
 
 Other alpha_cuts: \code{\link{core}}, \code{\link{supp}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{alpha_cuts}

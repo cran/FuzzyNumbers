@@ -33,4 +33,4 @@ Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{expectedInterval}}, \code{\link{plot}}
 }
-
+\concept{TrapezoidalFuzzyNumber-method}

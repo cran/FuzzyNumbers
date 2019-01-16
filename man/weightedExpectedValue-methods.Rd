@@ -49,11 +49,13 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{width}}
 
+Other deffuzification: \code{\link{expectedValue}},
+  \code{\link{value}}
+
 Other characteristics: \code{\link{ambiguity}},
   \code{\link{expectedValue}}, \code{\link{value}},
   \code{\link{width}}
-
-Other deffuzification: \code{\link{expectedValue}},
-  \code{\link{value}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{characteristics}
+\concept{deffuzification}

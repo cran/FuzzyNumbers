@@ -3,8 +3,8 @@
 \docType{methods}
 \name{as.FuzzyNumber}
 \alias{as.FuzzyNumber}
-\alias{as.FuzzyNumber,FuzzyNumber-method}
 \alias{as.FuzzyNumber,numeric-method}
+\alias{as.FuzzyNumber,FuzzyNumber-method}
 \title{Converts an Object to a Fuzzy Number}
 \usage{
 \S4method{as.FuzzyNumber}{numeric}(object)
@@ -52,4 +52,5 @@ Other conversion: \code{\link{as.PiecewiseLinearFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{as.character}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{conversion}

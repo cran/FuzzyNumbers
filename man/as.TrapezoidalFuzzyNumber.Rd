@@ -3,11 +3,11 @@
 \docType{methods}
 \name{as.TrapezoidalFuzzyNumber}
 \alias{as.TrapezoidalFuzzyNumber}
-\alias{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}
-\alias{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
-\alias{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}
-\alias{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
 \alias{as.TrapezoidalFuzzyNumber,numeric-method}
+\alias{as.TrapezoidalFuzzyNumber,FuzzyNumber-method}
+\alias{as.TrapezoidalFuzzyNumber,TrapezoidalFuzzyNumber-method}
+\alias{as.TrapezoidalFuzzyNumber,PowerFuzzyNumber-method}
+\alias{as.TrapezoidalFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
 \title{Converts an Object to a Trapezoidal Fuzzy Number}
 \usage{
 \S4method{as.TrapezoidalFuzzyNumber}{numeric}(object)
@@ -52,6 +52,22 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
 
+Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
+  \code{\link{TrapezoidalFuzzyNumber-class}},
+  \code{\link{TrapezoidalFuzzyNumber}},
+  \code{\link{TriangularFuzzyNumber}},
+  \code{\link{alphaInterval}},
+  \code{\link{as.PiecewiseLinearFuzzyNumber}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{expectedInterval}}, \code{\link{plot}}
+
+Other PowerFuzzyNumber-method: \code{\link{PowerFuzzyNumber-class}},
+  \code{\link{PowerFuzzyNumber}},
+  \code{\link{alphaInterval}},
+  \code{\link{as.PowerFuzzyNumber}},
+  \code{\link{as.character}},
+  \code{\link{expectedInterval}}
+
 Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{PiecewiseLinearFuzzyNumber-class}},
   \code{\link{PiecewiseLinearFuzzyNumber}},
@@ -71,25 +87,13 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
 
-Other PowerFuzzyNumber-method: \code{\link{PowerFuzzyNumber-class}},
-  \code{\link{PowerFuzzyNumber}},
-  \code{\link{alphaInterval}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{as.character}},
-  \code{\link{expectedInterval}}
-
-Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
-  \code{\link{TrapezoidalFuzzyNumber-class}},
-  \code{\link{TrapezoidalFuzzyNumber}},
-  \code{\link{TriangularFuzzyNumber}},
-  \code{\link{alphaInterval}},
-  \code{\link{as.PiecewiseLinearFuzzyNumber}},
-  \code{\link{as.PowerFuzzyNumber}},
-  \code{\link{expectedInterval}}, \code{\link{plot}}
-
 Other conversion: \code{\link{as.FuzzyNumber}},
   \code{\link{as.PiecewiseLinearFuzzyNumber}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.character}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{PowerFuzzyNumber-method}
+\concept{TrapezoidalFuzzyNumber-method}
+\concept{conversion}

@@ -30,6 +30,7 @@ It also allows for making more valid fuzzy number plots.
 
 Class \code{\linkS4class{FuzzyNumber}}, directly.
 }
+
 \examples{
 showClass("DiscontinuousFuzzyNumber")
 showMethods(classes="DiscontinuousFuzzyNumber")
@@ -41,4 +42,4 @@ Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber}},
   \code{\link{distance}}, \code{\link{integrateAlpha}},
   \code{\link{plot}}
 }
-
+\concept{DiscontinuousFuzzyNumber-method}

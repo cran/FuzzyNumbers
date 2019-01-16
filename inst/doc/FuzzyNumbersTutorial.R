@@ -1,12 +1,12 @@
-## ----FNver,echo=FALSE,results='asis',cache=FALSE-------------------------
+## ----FNver,echo=FALSE,results='asis'-------------------------------------
 FNver <- packageDescription("FuzzyNumbers")$Version
-if (as.integer(substring(FNver, nchar(FNver))) == "0") {
-   cat("\\DevelopmentVersiontrue\n")
-} else {
-   cat("\\DevelopmentVersionfalse\n")
-}
+#if (as.integer(substring(FNver, nchar(FNver))) == "0") {
+#   cat("\\DevelopmentVersiontrue\n")
+#} else {
+#   cat("\\DevelopmentVersionfalse\n")
+#}
 
-## ----echo=FALSE,results='hide',warning=FALSE,message=FALSE,cache=FALSE----
+## ----echo=FALSE,results='hide',warning=FALSE,message=FALSE-------------
 options(digits=7)
 options(width=73)
 require('knitr')
@@ -56,6 +56,8 @@ opts_chunk$set(
 #    dev.args=list(pointsize=11),
 #    dev='tikz',
 #    external=TRUE,
+    warning=FALSE,
+    message=FALSE,
    fig.align='center',
    size='small'
 )
@@ -82,16 +84,16 @@ A1 <- FuzzyNumber(1, 2, 4, 7,
    right=function(x) 1-x
 )
 
-## ----A1ex2,dependson='A1ex'--------------------------------------------
+## ----A1ex2-------------------------------------------------------------
 class(A1)
 
-## ----A1ex3,dependson='A1ex'--------------------------------------------
+## ----A1ex3-------------------------------------------------------------
 A1
 
-## ----A1ex4,dependson='A1ex',fig.keep='none'----------------------------
+## ----A1ex4,fig.keep='none'---------------------------------------------
 plot(A1)
 
-## ----A1ex5,dependson='A1ex',echo=FALSE---------------------------------
+## ----A1ex5,echo=FALSE--------------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A1, xlab=expression(x), ylab=expression(alpha), main='')
 
@@ -99,19 +101,19 @@ plot(A1, xlab=expression(x), ylab=expression(alpha), main='')
 f <- splinefun(c(-4,-3.5,-3,-2.2,-2), c(0,0.4,0.7,0.9,1), method='monoH.FC')
 g <- splinefun(c(-1,0,10), c(1,0.5,0), method='monoH.FC')
 
-## ----ExFconvert2,dependson='ExFconvert'--------------------------------
+## ----ExFconvert2-------------------------------------------------------
 convertSide(f, -4, -2)(c(0,1))
 convertSide(g, -1, 10)(c(0,1))
 convertSide(g, 10, -1)(c(0,1)) # interesting!
 
-## ----ExFconvert3,dependson='ExFconvert2',fig.keep='none'---------------
+## ----ExFconvert3,fig.keep='none'---------------------------------------
 B <- FuzzyNumber(10,20,20,30,
     left=convertSide(f, -4, -2),
    right=convertSide(g, -1, 10)
 )
 plot(B, xlab=expression(x), ylab=expression(alpha))
 
-## ----ExFconvert4,dependson='ExFconvert3',echo=FALSE--------------------
+## ----ExFconvert4,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 B <- FuzzyNumber(10,20,20,30,
     left=convertSide(f, -4, -2),
@@ -133,7 +135,7 @@ plot(A2, col='red', lty=2, add=TRUE)
 legend('topright', c(expression(mu[A1]), expression(mu[A2])),
    col=c('blue', 'red'), lty=c(1,2))
 
-## ----alphacutEx2,dependson='alphacutEx',echo=FALSE---------------------
+## ----alphacutEx2,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A1, col='blue', xlab=expression(x), ylab=expression(alpha))
 plot(A2, col='red', lty=2, add=TRUE)
@@ -144,22 +146,22 @@ legend('topright', expression(mu[A[1]], mu[A[2]]),
 A3 <- FuzzyNumber(1, 2, 4, 5)
 A3
 
-## ----A3deffig,dependson='A3def',fig.keep='none'------------------------
+## ----A3deffig,fig.keep='none'------------------------------------------
 plot(A3)
 
-## ----A3deffig2,dependson='A3def',echo=FALSE----------------------------
+## ----A3deffig2,echo=FALSE----------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A3, xlab=expression(x), ylab=expression(alpha), shadowcol='gray')
 
-## ----alphacutEx3,dependson='alphacutEx'--------------------------------
+## ----alphacutEx3-------------------------------------------------------
 alphacut(A2, 0.5) # A2 has alpha-cut generators defined
 alphacut(A1, 0.5) # A1 hasn't got them
 
-## ----alphacutEx4,dependson='alphacutEx'--------------------------------
+## ----alphacutEx4-------------------------------------------------------
 evaluate(A1, 6.5) # A1 has side generators defined
 evaluate(A2, 6.5) # A2 hasn't got them
 
-## ----alphacutEx5,dependson='alphacutEx'--------------------------------
+## ----alphacutEx5-------------------------------------------------------
 A2['lower']
 A2['upper']
 A2['left']
@@ -182,20 +184,20 @@ max(abs(qbeta(1-x, 1, 0.1) - A4['upper'](x))) # sup-error estimator
 ## ----TrapEx1a----------------------------------------------------------
 T1 <- TrapezoidalFuzzyNumber(1, 1.5, 4, 7)
 
-## ----TrapEx1f,dependson='TrapEx1e',results='asis',echo=FALSE-----------
+## ----TrapEx1f,results='asis',echo=FALSE--------------------------------
 cat(as.character(T1, toLaTeX=TRUE, varnameLaTeX='T_1'))
 
-## ----TrapEx1b,dependson='TrapEx1a'-------------------------------------
+## ----TrapEx1b----------------------------------------------------------
 class(T1)
 
-## ----TrapEx1c,dependson='TrapEx1b',fig.keep='none'---------------------
+## ----TrapEx1c,fig.keep='none'------------------------------------------
 plot(T1)
 
-## ----TrapEx1d,dependson='TrapEx1c',echo=FALSE--------------------------
+## ----TrapEx1d,echo=FALSE-----------------------------------------------
 par(mar=c(4,4,2,1))
 plot(T1, xlab=expression(x), ylab=expression(alpha))
 
-## ----TrapEx1e,dependson='TrapEx1d'-------------------------------------
+## ----TrapEx1e----------------------------------------------------------
 T1['lower']
 T1['upper']
 T1['left']
@@ -221,16 +223,16 @@ P2
 plot(P1, type='b', from=0, to=5, xlim=c(0.5,4.5))
 plot(P2, type='b', col=2, lty=2, pch=2, add=TRUE, from=0, to=5)
 
-## ----PLFNEx1b,dependson='PLFNEx1a',echo=FALSE--------------------------
+## ----PLFNEx1b,echo=FALSE-----------------------------------------------
 par(mar=c(4,4,2,1))
 plot(P1, type='b', xlab=expression(x), ylab=expression(alpha), from=0, to=5, xlim=c(0.5,4.5))
 plot(P2, type='b', col=2, lty=2, pch=2, add=TRUE, from=0, to=5)
 
-## ----PLFNEx1c,dependson='PLFNEx1b'-------------------------------------
+## ----PLFNEx1c----------------------------------------------------------
 P1['knots']
 P1['allknots'] # including a1,a2,a3,a4
 
-## ----PLFNEx1d,dependson='PLFNEx1c',results='asis',echo=FALSE-----------
+## ----PLFNEx1d,results='asis',echo=FALSE--------------------------------
 cat(as.character(P1, toLaTeX=TRUE, varnameLaTeX='P_1'))
 
 ## ----PLFNEx3-----------------------------------------------------------
@@ -250,7 +252,7 @@ abline(v=P3['knot.left'], col='gray', lty=3)
 abline(v=P3['knot.right'], col='gray', lty=3)
 text(7.5, alpha, sprintf('a=%g', alpha), pos=3)
 
-## ----PLFNEx2b,dependson='PLFNEx2a',echo=FALSE--------------------------
+## ----PLFNEx2b,echo=FALSE-----------------------------------------------
 par(mar=c(4,4,2,1))
 plot(P3, type='b', xlab=expression(x), ylab=expression(alpha), from=-1, to=9, xlim=c(0,8))
 abline(h=alpha, col='gray', lty=2)
@@ -258,7 +260,7 @@ abline(v=P3['knot.left'], col='gray', lty=3)
 abline(v=P3['knot.right'], col='gray', lty=3)
 text(7.5, alpha, parse(text=sprintf('alpha*"="*%g', alpha)), pos=3)
 
-## ----PLFNEx2c,dependson='PLFNEx2b'-------------------------------------
+## ----PLFNEx2c----------------------------------------------------------
 (as.FuzzyNumber(P3))
 
 ## ----PowerEx1a,fig.keep='none'-----------------------------------------
@@ -267,11 +269,11 @@ class(X)
 X
 plot(X)
 
-## ----PowerEx1b,dependson='PowerEx1a',echo=FALSE------------------------
+## ----PowerEx1b,echo=FALSE----------------------------------------------
 par(mar=c(4,4,2,1))
 plot(X, type='l', xlab=expression(x), ylab=expression(alpha))
 
-## ----PowerEx1c,dependson='PowerEx1b',results='asis',echo=FALSE---------
+## ----PowerEx1c,results='asis',echo=FALSE-------------------------------
 cat(as.character(X, toLaTeX=TRUE, varnameLaTeX='X'))
 
 ## ----depicting1a,fig.keep='none'---------------------------------------
@@ -283,49 +285,49 @@ A <- FuzzyNumber(-5, 3, 6, 20,
 )
 plot(A)
 
-## ----depicting1b,dependson='depicting1a',echo=FALSE--------------------
+## ----depicting1b,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 
-## ----depicting1c,dependson='depicting1b',fig.keep='none'---------------
+## ----depicting1c,fig.keep='none'---------------------------------------
 plot(A, n=3, type='b')
 plot(A, n=6, add=TRUE,  lty=2, col=2, type='b', pch=2)
 plot(A, n=101, add=TRUE, lty=4, col=4) # default n
 
-## ----depicting1d,dependson='depicting1c',echo=FALSE--------------------
+## ----depicting1d,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, n=3, type='b', xlab=expression(x), ylab=expression(alpha))
 plot(A, n=6, add=TRUE, lty=2, col=2, type='b', pch=2)
 plot(A, n=101, add=TRUE, lty=4, col=4) # default n
 
-## ----depicting1e,dependson='depicting1d',fig.keep='none'---------------
+## ----depicting1e,fig.keep='none'---------------------------------------
 plot(A, n=3, at.alpha=numeric(0), type='b') # use alpha-cuts
 plot(A, n=3, type='b', col=2, lty=2, pch=2, add=TRUE) # use sides
 
-## ----depicting1f,dependson='depicting1e',echo=FALSE--------------------
+## ----depicting1f,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, n=3, at.alpha=numeric(0), type='b', xlab=expression(x), ylab=expression(alpha)) # use alpha-cuts
 plot(A, n=3, type='b', col=2, lty=2, pch=2, add=TRUE) # use side generators
 
-## ----depicting1g,dependson='depicting1f',fig.keep='none'---------------
+## ----depicting1g,fig.keep='none'---------------------------------------
 plot(A, draw.alphacuts=TRUE)
 
-## ----depicting1h,dependson='depicting1g',echo=FALSE--------------------
+## ----depicting1h,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, draw.alphacuts=TRUE, ylab=expression(x), xlab=expression(alpha))
 
-## ----A1ex6,dependson='A1ex',eval=FALSE---------------------------------
+## ----A1ex6,eval=FALSE--------------------------------------------------
 #  pdf('figure1.pdf', width=8, height=5) # create file
 #  plot(A)
 #  dev.off() # close graphical device and save the file
 
-## ----depicting1i,dependson='depicting1h',eval=FALSE--------------------
+## ----depicting1i,eval=FALSE--------------------------------------------
 #  cat(as.character(A, toLaTeX=TRUE, varnameLaTeX='A'))
 
-## ----depicting1i2,dependson='depicting1i',results='asis',echo=FALSE----
+## ----depicting1i2,results='asis',echo=FALSE----------------------------
 cat(as.character(A, toLaTeX=TRUE, varnameLaTeX='A'))
 
-## ----depicting1i3,dependson='depicting1i',results='asis',echo=FALSE----
+## ----depicting1i3,results='asis',echo=FALSE----------------------------
 cat(as.character(A, toLaTeX=TRUE, varnameLaTeX='A'))
 
 ## ----depicting2a,fig.keep='none'---------------------------------------
@@ -347,7 +349,7 @@ text(5.1, X['knot.alpha'], expression(alpha[0]), pos=4, xpd=TRUE)
 plot(X, add=TRUE, type='l', from=-1, to=6)
 plot(X, add=TRUE, type='p', from=-1, to=6)
 
-## ----depicting2b,dependson='depicting2a',echo=FALSE--------------------
+## ----depicting2b,echo=FALSE--------------------------------------------
 par(mar=c(4,4,2,1))
 X <- PiecewiseLinearFuzzyNumber(0, 1, 2, 5, knot.n=1,
    knot.alpha=0.6, knot.left=0.3, knot.right=4)
@@ -375,13 +377,13 @@ A <- FuzzyNumber(-5, 3, 6, 20,
    upper=function(alpha) (1-alpha)^4
 )
 
-## ----comput1b,dependson='comput1a'-------------------------------------
+## ----comput1b----------------------------------------------------------
 supp(A)
 
-## ----comput1c,dependson='comput1b'-------------------------------------
+## ----comput1c----------------------------------------------------------
 core(A)
 
-## ----comput1d,dependson='comput1c'-------------------------------------
+## ----comput1d----------------------------------------------------------
 alphacut(A, 0) # same as supp(A) (if alpha-cut generators are defined)
 alphacut(A, 1) # same as core(A)
 (a <- alphacut(A, c(0, 0.5, 1)))
@@ -389,31 +391,31 @@ a[1, ]
 a[2, 2]
 a[, "L"]
 
-## ----comput1e,dependson='comput1d'-------------------------------------
+## ----comput1e----------------------------------------------------------
 evaluate(A, 1)
 evaluate(A, c(-3,0,3))
 evaluate(A, seq(-1, 2, by=0.5))
 
-## ----comput1f,dependson='comput1e'-------------------------------------
+## ----comput1f----------------------------------------------------------
 expectedInterval(A)
 
-## ----comput1g,dependson='comput1f'-------------------------------------
+## ----comput1g----------------------------------------------------------
 expectedValue(A)
 
-## ----comput1h,dependson='comput1g'-------------------------------------
+## ----comput1h----------------------------------------------------------
 weightedExpectedValue(A, 0.5) # equivalent to expectedValue(A)
 weightedExpectedValue(A, 0.25)
 
-## ----comput1i,dependson='comput1h'-------------------------------------
+## ----comput1i----------------------------------------------------------
 value(A)
 
-## ----comput1j,dependson='comput1i'-------------------------------------
+## ----comput1j----------------------------------------------------------
 width(A)
 
-## ----comput1k,dependson='comput1j'-------------------------------------
+## ----comput1k----------------------------------------------------------
 ambiguity(A)
 
-## ----comput1l,dependson='comput1k'-------------------------------------
+## ----comput1l----------------------------------------------------------
 diff(supp(A))
 
 ## ----addition,fig.keep='none'------------------------------------------
@@ -423,7 +425,7 @@ plot(A, xlim=c(0,6))
 plot(B, add=TRUE, col=2, lty=2)
 plot(A+B, add=TRUE, col=4, lty=4)
 
-## ----additionFig,dependson='addition',echo=FALSE,results='hide'--------
+## ----additionFig,echo=FALSE,results='hide'-----------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlim=c(0,6), xlab=expression(x), ylab=expression(alpha))
 plot(B, add=TRUE, col=2, lty=2)
@@ -442,7 +444,7 @@ A+B # note the number of knots has increased
 A <- as.PiecewiseLinearFuzzyNumber(TrapezoidalFuzzyNumber(0,1,2,3), knot.n=100)
 plot(fapply(A, function(x) sqrt(log(x+1))))
 
-## ----fapplyFig,dependson='fapply',echo=FALSE,results='hide'------------
+## ----fapplyFig,echo=FALSE,results='hide'-------------------------------
 par(mar=c(4,4,2,1))
 plot(fapply(A, function(x) log(x+1)^0.5), xlab=expression(x), ylab=expression(alpha))
 legend('topleft', expression(sqrt(log(A+1))), lty=1)
@@ -453,7 +455,7 @@ plot(A, xlim=c(-8,8))
 plot(A^2, add=TRUE, col=2, lty=2)
 plot(A^3, add=TRUE, col=4, lty=4)
 
-## ----exponentialFig,dependson='exponential',echo=FALSE,results='hide'----
+## ----exponentialFig,echo=FALSE,results='hide'--------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlim=c(-8,8), xlab=expression(x), ylab=expression(alpha))
 plot(A^2, add=TRUE, col=2, lty=2)
@@ -474,29 +476,29 @@ A <- FuzzyNumber(-5, 3, 6, 20,
    upper=function(alpha) (1-alpha)^4
 )
 
-## ----ApproxExA_naive,dependson='ApproxExA',fig.keep='none'-------------
+## ----ApproxExA_naive,fig.keep='none'-----------------------------------
 (T1 <- trapezoidalApproximation(A, method='Naive'))
 distance(A, T1)
 
-## ----ApproxExA_naive2,dependson='ApproxExA_naive',echo=FALSE-----------
+## ----ApproxExA_naive2,echo=FALSE---------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(T1, col='red', lty=2, add=TRUE)
 legend('topright', legend=expression(A, 'Naive approx.'),
    col=c('black', 'red'), lty=c(1,2))
 
-## ----ApproxExA_L2n,dependson='ApproxExA',fig.keep='none'---------------
+## ----ApproxExA_L2n,fig.keep='none'-------------------------------------
 (T2 <- trapezoidalApproximation(A, method='NearestEuclidean'))
 distance(A, T2)
 
-## ----ApproxExA_naiveL2n2,dependson='ApproxExA_L2n',echo=FALSE----------
+## ----ApproxExA_naiveL2n2,echo=FALSE------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(T2, col='red', lty=2, add=TRUE)
 legend('topright', legend=expression(A, L[2]-"nearest approx."),
    col=c('black', 'red'), lty=c(1,2))
 
-## ----ApproxExA_ExpInt,dependson='ApproxExA',fig.keep='none'------------
+## ----ApproxExA_ExpInt,fig.keep='none'----------------------------------
 ambiguity(A)
 width(A)/3
 (T3 <- trapezoidalApproximation(A, method='ExpectedIntervalPreserving'))
@@ -504,7 +506,7 @@ distance(A, T3)
 expectedInterval(A)
 expectedInterval(T3)
 
-## ----ApproxExA_ExpInt2,dependson='ApproxExA_ExpInt',eval=FALSE,echo=FALSE----
+## ----ApproxExA_ExpInt2,eval=FALSE,echo=FALSE---------------------------
 #  par(mar=c(4,4,2,1))
 #  plot(A, xlab=expression(x), ylab=expression(alpha))
 #  plot(T3, col='red', lty=2, add=TRUE)
@@ -518,7 +520,7 @@ expectedInterval(T3)
 distance(B, TB1)
 distance(B, TB2)
 
-## ----ApproxExA_ExpInt3Fig,dependson='ApproxExA_ExpInt3',echo=FALSE-----
+## ----ApproxExA_ExpInt3Fig,echo=FALSE-----------------------------------
 par(mar=c(4,4,2,1))
 plot(B, xlab=expression(x), ylab=expression(alpha), log='x', xlim=c(0.9,46))
 plot(TB1, col='red',  lty=2, add=TRUE)
@@ -526,11 +528,11 @@ plot(TB2, col='blue', lty=3, add=TRUE)
 legend('topright', expression(mu[B], mu[TB[1]], mu[TB[2]]),
    col=c('black', 'red', 'blue'), lty=c(1,2,3))
 
-## ----ApproxExA_RestrSuppCore,dependson='ApproxExA',fig.keep='none'-----
+## ----ApproxExA_RestrSuppCore,fig.keep='none'---------------------------
 (T4 <- trapezoidalApproximation(A, method='SupportCoreRestricted'))
 distance(A, T4)
 
-## ----ApproxExA_RestrSuppCore2,dependson='ApproxExA_RestrSuppCore',echo=FALSE----
+## ----ApproxExA_RestrSuppCore2,echo=FALSE-------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(T4, col='red', lty=2, add=TRUE)
@@ -545,33 +547,33 @@ A <- FuzzyNumber(-5, 3, 6, 20,
    upper=function(alpha) (1-alpha)^4
 )
 
-## ----ApproxPLFNNaive,dependson='ApproxExAPLFN',fig.keep='none'---------
+## ----ApproxPLFNNaive,fig.keep='none'-----------------------------------
 P1 <- piecewiseLinearApproximation(A, method='Naive',
          knot.n=1, knot.alpha=0.5)
 P1['allknots']
 print(distance(A, P1), 8)
 
-## ----ApproxPLFNNaive2,dependson='ApproxPLFNNaive',echo=FALSE-----------
+## ----ApproxPLFNNaive2,echo=FALSE---------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(P1, col='red', lty=2, add=TRUE)
 legend('topright', legend=expression(A, 'Naive approx.'),
    col=c('black', 'red'), lty=c(1,2))
 
-## ----ApproxPLFNNearest,dependson='ApproxExAPLFN',fig.keep='none'-------
+## ----ApproxPLFNNearest,fig.keep='none'---------------------------------
 P2 <- piecewiseLinearApproximation(A,
    method='NearestEuclidean', knot.n=3, knot.alpha=c(0.25,0.5,0.75))
 print(P2['allknots'], 6)
 print(distance(A, P2), 12)
 
-## ----ApproxPLFNNearest2,dependson='ApproxPLFNNearest',echo=FALSE-------
+## ----ApproxPLFNNearest2,echo=FALSE-------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(P2, col='red', lty=2, add=TRUE)
 legend('topright', legend=expression(A, L[2]-"nearest approx."),
    col=c('black', 'red'), lty=c(1,2))
 
-## ----ApproxPLFNNearestConv1,dependson='ApproxPLFNNearest2',fig.keep='none'----
+## ----ApproxPLFNNearestConv1,fig.keep='none'----------------------------
 n <- 1:27
 d <- matrix(NA, ncol=4, nrow=length(n))
 # d[,1] - Naive approximator's error for given knot.n
@@ -592,13 +594,13 @@ for (i in seq_along(n))
 }
 matplot(n, d, type='l', log="y", lty=c(1,2,4), col=c(1,2,4))
 
-## ----ApproxPLFNNearestConv2,dependson='ApproxPLFNNearestConv1',echo=FALSE----
+## ----ApproxPLFNNearestConv2,echo=FALSE---------------------------------
 par(mar=c(4,4,2,1))
 matplot(n, d, type='l', xlab=expression(n), ylab=expression(d(A, '*')), log="y", lty=c(1,2,4), col=c(1,2,4))
 legend(x=19, y=3.2, expression(d(A, {N^n}(A)), d(A, {Pi^n}(A)), 'upper bound'),
    lty=c(1,2,4), col=c(1,2,4))
 
-## ----ApproxPLFNNearest3,dependson='ApproxPLFNNearest2',fig.keep='none'----
+## ----ApproxPLFNNearest3,fig.keep='none'--------------------------------
 a <- seq(1e-9, 1-1e-9, length.out=100) # many alphas from (0,1)
 d <- numeric(length(a)) # distances /to be calculated/
 for (i in seq_along(a))
@@ -609,11 +611,11 @@ for (i in seq_along(a))
 }
 plot(a, d, type='l', xlab=expression(alpha), ylab=expression(D[A](alpha)))
 
-## ----ApproxPLFNNearest4,dependson='ApproxPLFNNearest3',echo=FALSE------
+## ----ApproxPLFNNearest4,echo=FALSE-------------------------------------
 par(mar=c(4,4,2,1))
 plot(a, d, type='l', xlab=expression(alpha), ylab=expression(D[A](alpha)))
 
-## ----ApproxPLFNNearest5,dependson='ApproxPLFNNearest4',warning=FALSE----
+## ----ApproxPLFNNearest5,warning=FALSE----------------------------------
 for (i in 1:5) # 5 iterations
 {
    a0 <- runif(1,0,1) # random starting point
@@ -634,7 +636,7 @@ A <- FuzzyNumber(0, 3, 4, 5,
    upper=function(x) 1-x^3
 )
 
-## ----suppcoreplfn1a2,dependson='suppcoreplfn1a'------------------------
+## ----suppcoreplfn1a2---------------------------------------------------
 knot.alpha <- 0.2
 P1 <- piecewiseLinearApproximation(A, knot.alpha=knot.alpha)
 P2 <- piecewiseLinearApproximation(A, method="SupportCorePreserving",
@@ -644,7 +646,7 @@ print(alphacut(P1, c(0, knot.alpha, 1)))
 distance(A, P2)
 print(alphacut(P2, c(0, knot.alpha, 1)))
 
-## ----suppcoreplfn1a3,dependson='suppcoreplfn1a2',echo=FALSE------------
+## ----suppcoreplfn1a3,echo=FALSE----------------------------------------
 par(mar=c(4,4,2,1))
 plot(A, xlab=expression(x), ylab=expression(alpha))
 plot(P1, col=2, add=TRUE, lty=2)
@@ -652,12 +654,12 @@ plot(P2, col=4, add=TRUE, lty=4, lwd=2)
 abline(h=knot.alpha, col="grey", lty=3)
 legend("topleft", legend=expression(A, P[1], P[2]), lty=c(1,2,4), col=c(1,2,4), lwd=c(1,1,2))
 
-## ----suppcoreplfn1a4,dependson='suppcoreplfn1a'------------------------
+## ----suppcoreplfn1a4---------------------------------------------------
 D <- function(a) distance(A,
    piecewiseLinearApproximation(A, method="SupportCorePreserving", knot.alpha=a))
 optimize(D, lower=0, upper=1)
 
-## ----suppcoreplfn1a5,dependson='suppcoreplfn1a4',echo=FALSE------------
+## ----suppcoreplfn1a5,echo=FALSE----------------------------------------
 par(mar=c(4,4,2,1))
 a <- seq(0, 1, length.out=1001)
 Da <- sapply(a, D)
@@ -673,19 +675,19 @@ abline(h=opt$objective, col="grey", lty=3)
 x = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0.2, 1.0, 2.8))
 y = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0, 1.8, 2.2))
 
-## ----compareXY1plot,dependson='compareXY1'-----------------------------
+## ----compareXY1plot----------------------------------------------------
 plot(x, col=2)
 plot(y, col=4, add=TRUE)
 
-## ----compareXY1c1,dependson='compareXY1'-------------------------------
+## ----compareXY1c1------------------------------------------------------
 possibilityExceedance(x,y)
 necessityExceedance(x,y)
 
-## ----compareXY1c2,dependson='compareXY1'-------------------------------
+## ----compareXY1c2------------------------------------------------------
 possibilityStrictExceedance(x,y)
 necessityStrictExceedance(x,y)
 
-## ----compareXY1c3,dependson='compareXY1'-------------------------------
+## ----compareXY1c3------------------------------------------------------
 possibilityUndervaluation(x,y)
 necessityUndervaluation(x,y)
 possibilityStrictUndervaluation(x,y)
@@ -719,7 +721,7 @@ minFN = minimum(x,y)
 plot(minFN, col=4)
 plot(maxFN, col=6, add=TRUE)
 
-## ----minmaxXYFig,dependson='minmaxXY',echo=FALSE,results='hide'--------
+## ----minmaxXYFig,echo=FALSE,results='hide'-----------------------------
 par(mar=c(4,4,2,1))
 plot(x, col=1, xlim = c(min,max))
 plot(y, col=2, add=TRUE)

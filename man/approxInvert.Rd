@@ -30,4 +30,4 @@ Thus, interpolation is used.
 Other auxiliary: \code{\link{convertAlpha}},
   \code{\link{convertSide}}
 }
-
+\concept{auxiliary}

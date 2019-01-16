@@ -41,4 +41,5 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
 Other alpha_cuts: \code{\link{alphacut}},
   \code{\link{supp}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{alpha_cuts}

@@ -33,6 +33,7 @@ For other see \linkS4class{PiecewiseLinearFuzzyNumber}.
 
 Class \code{\linkS4class{FuzzyNumber}}, directly.
 }
+
 \examples{
 showClass("PowerFuzzyNumber")
 showMethods(classes="PowerFuzzyNumber")
@@ -54,4 +55,4 @@ Other PowerFuzzyNumber-method: \code{\link{PowerFuzzyNumber}},
   \code{\link{as.character}},
   \code{\link{expectedInterval}}
 }
-
+\concept{PowerFuzzyNumber-method}

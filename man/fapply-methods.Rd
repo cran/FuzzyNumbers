@@ -54,4 +54,5 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
 Other extension_principle: \code{\link{Arithmetic}},
   \code{\link{^,PiecewiseLinearFuzzyNumber,numeric-method}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{extension_principle}

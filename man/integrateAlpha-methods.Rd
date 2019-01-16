@@ -3,8 +3,8 @@
 \docType{methods}
 \name{integrateAlpha}
 \alias{integrateAlpha}
-\alias{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}
 \alias{integrateAlpha,FuzzyNumber,character,numeric,numeric-method}
+\alias{integrateAlpha,DiscontinuousFuzzyNumber,character,numeric,numeric-method}
 \title{Numerically Integrate Alpha-Cut Bounds}
 \usage{
 \S4method{integrateAlpha}{FuzzyNumber,character,numeric,numeric}(object, which=c("lower", "upper"),
@@ -35,10 +35,6 @@ Returns a single numeric value.
 Integrates numerically a transformed or weighted lower or upper alpha-cut bound of a fuzzy number.
 }
 \seealso{
-Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
-  \code{\link{DiscontinuousFuzzyNumber}},
-  \code{\link{distance}}, \code{\link{plot}}
-
 Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{FuzzyNumber-class}},
   \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
@@ -57,5 +53,10 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
-}
 
+Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
+  \code{\link{DiscontinuousFuzzyNumber}},
+  \code{\link{distance}}, \code{\link{plot}}
+}
+\concept{DiscontinuousFuzzyNumber-method}
+\concept{FuzzyNumber-method}

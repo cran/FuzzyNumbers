@@ -58,6 +58,7 @@ of fuzzy numbers like trapezoidal, piecewise linear, or ``parametric'' FNs.
 \code{\linkS4class{PowerFuzzyNumber}}, and
 \code{\linkS4class{DiscontinuousFuzzyNumber}}
 }
+
 \examples{
 showClass("FuzzyNumber")
 showMethods(classes="FuzzyNumber")
@@ -92,4 +93,4 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
 }
-
+\concept{FuzzyNumber-method}

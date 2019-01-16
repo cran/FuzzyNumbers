@@ -21,9 +21,6 @@ possibility of exceedance of e2 by e1.
 Determines value of possibility of \eqn{e1>e2}, the result is from
 range [0,1]. Value 0 indicates no fulfilment of the operator
 and 1 indicates complete fulfilment.
-
-The detailed description of the operator and its definition 
-is provided in article referenced below.
 }
 \examples{
 a <- TriangularFuzzyNumber(2, 3, 5)
@@ -36,6 +33,14 @@ possibilityStrictExceedance(a,b)
 DUBOIS, Didier and PRADE, Henri, 1983, Ranking Fuzzy Numbers in the Setting of Possibility Theory. Information Sciences. 1983. Vol. 30, no. 3, p. 183--224.
 }
 \seealso{
+Other comparison-operators: \code{\link{necessityExceedance}},
+  \code{\link{necessityStrictExceedance}},
+  \code{\link{necessityStrictUndervaluation}},
+  \code{\link{necessityUndervaluation}},
+  \code{\link{possibilityExceedance}},
+  \code{\link{possibilityStrictUndervaluation}},
+  \code{\link{possibilityUndervaluation}}
+
 Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{PiecewiseLinearFuzzyNumber-class}},
   \code{\link{PiecewiseLinearFuzzyNumber}},
@@ -54,13 +59,6 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{plot}}, \code{\link{possibilityExceedance}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
-
-Other comparison-operators: \code{\link{necessityExceedance}},
-  \code{\link{necessityStrictExceedance}},
-  \code{\link{necessityStrictUndervaluation}},
-  \code{\link{necessityUndervaluation}},
-  \code{\link{possibilityExceedance}},
-  \code{\link{possibilityStrictUndervaluation}},
-  \code{\link{possibilityUndervaluation}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{comparison-operators}

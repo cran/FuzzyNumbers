@@ -53,6 +53,8 @@ KAUFMANN, A., GUPTA, M. M. (1985) Introduction to Fuzzy Arithmetic.
 New York : Van Nostrand Reinhold Company. ISBN 044230079.
 }
 \seealso{
+Other min_max-operators: \code{\link{maximum}}
+
 Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{PiecewiseLinearFuzzyNumber-class}},
   \code{\link{PiecewiseLinearFuzzyNumber}},
@@ -71,7 +73,6 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictExceedance}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
-
-Other min_max-operators: \code{\link{maximum}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{min_max-operators}

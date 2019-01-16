@@ -44,4 +44,5 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{membership_function}

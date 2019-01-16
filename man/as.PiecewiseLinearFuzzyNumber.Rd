@@ -3,10 +3,10 @@
 \docType{methods}
 \name{as.PiecewiseLinearFuzzyNumber}
 \alias{as.PiecewiseLinearFuzzyNumber}
-\alias{as.PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
-\alias{as.PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
 \alias{as.PiecewiseLinearFuzzyNumber,TrapezoidalFuzzyNumber-method}
 \alias{as.PiecewiseLinearFuzzyNumber,numeric-method}
+\alias{as.PiecewiseLinearFuzzyNumber,FuzzyNumber-method}
+\alias{as.PiecewiseLinearFuzzyNumber,PiecewiseLinearFuzzyNumber-method}
 \title{Converts an Object to a Piecewise Linear Fuzzy Number}
 \usage{
 \S4method{as.PiecewiseLinearFuzzyNumber}{TrapezoidalFuzzyNumber}(object, knot.n=0,
@@ -31,7 +31,7 @@ or vector of length two (interval)}
 defaults to uniformly distributed knots}
 }
 \value{
-Returns an bject of class \code{\linkS4class{PiecewiseLinearFuzzyNumber}}.
+Returns an object of class \code{\linkS4class{PiecewiseLinearFuzzyNumber}}.
 }
 \description{
 This method is only for exact conversion.
@@ -39,24 +39,14 @@ For other cases (e.g. general FNs), use
 \code{\link{piecewiseLinearApproximation}}.
 }
 \seealso{
-Other FuzzyNumber-method: \code{\link{Arithmetic}},
-  \code{\link{FuzzyNumber-class}},
-  \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
-  \code{\link{alphacut}}, \code{\link{ambiguity}},
-  \code{\link{as.FuzzyNumber}},
+Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
+  \code{\link{TrapezoidalFuzzyNumber-class}},
+  \code{\link{TrapezoidalFuzzyNumber}},
+  \code{\link{TriangularFuzzyNumber}},
+  \code{\link{alphaInterval}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{as.character}}, \code{\link{core}},
-  \code{\link{distance}}, \code{\link{evaluate}},
-  \code{\link{expectedInterval}},
-  \code{\link{expectedValue}},
-  \code{\link{integrateAlpha}},
-  \code{\link{piecewiseLinearApproximation}},
-  \code{\link{plot}}, \code{\link{show}},
-  \code{\link{supp}},
-  \code{\link{trapezoidalApproximation}},
-  \code{\link{value}}, \code{\link{weightedExpectedValue}},
-  \code{\link{width}}
+  \code{\link{expectedInterval}}, \code{\link{plot}}
 
 Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{PiecewiseLinearFuzzyNumber-class}},
@@ -77,18 +67,31 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
 
-Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
-  \code{\link{TrapezoidalFuzzyNumber-class}},
-  \code{\link{TrapezoidalFuzzyNumber}},
-  \code{\link{TriangularFuzzyNumber}},
-  \code{\link{alphaInterval}},
+Other FuzzyNumber-method: \code{\link{Arithmetic}},
+  \code{\link{FuzzyNumber-class}},
+  \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
+  \code{\link{alphacut}}, \code{\link{ambiguity}},
+  \code{\link{as.FuzzyNumber}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
-  \code{\link{expectedInterval}}, \code{\link{plot}}
+  \code{\link{as.character}}, \code{\link{core}},
+  \code{\link{distance}}, \code{\link{evaluate}},
+  \code{\link{expectedInterval}},
+  \code{\link{expectedValue}},
+  \code{\link{integrateAlpha}},
+  \code{\link{piecewiseLinearApproximation}},
+  \code{\link{plot}}, \code{\link{show}},
+  \code{\link{supp}},
+  \code{\link{trapezoidalApproximation}},
+  \code{\link{value}}, \code{\link{weightedExpectedValue}},
+  \code{\link{width}}
 
 Other conversion: \code{\link{as.FuzzyNumber}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{as.character}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{TrapezoidalFuzzyNumber-method}
+\concept{conversion}

@@ -4,11 +4,12 @@
 \alias{DiscontinuousFuzzyNumber}
 \title{Creates a Fuzzy Number with Possibly Discontinuous Side Functions or Alpha-Cut Bounds}
 \usage{
-DiscontinuousFuzzyNumber(a1, a2, a3, a4, lower = function(a) rep(NA_real_,
-  length(a)), upper = function(a) rep(NA_real_, length(a)),
+DiscontinuousFuzzyNumber(a1, a2, a3, a4, lower = function(a)
+  rep(NA_real_, length(a)), upper = function(a) rep(NA_real_, length(a)),
   left = function(x) rep(NA_real_, length(x)), right = function(x)
   rep(NA_real_, length(x)), discontinuities.left = numeric(0),
-  discontinuities.right = numeric(0), discontinuities.lower = numeric(0),
+  discontinuities.right = numeric(0),
+  discontinuities.lower = numeric(0),
   discontinuities.upper = numeric(0))
 }
 \arguments{
@@ -48,4 +49,4 @@ Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-clas
   \code{\link{distance}}, \code{\link{integrateAlpha}},
   \code{\link{plot}}
 }
-
+\concept{DiscontinuousFuzzyNumber-method}

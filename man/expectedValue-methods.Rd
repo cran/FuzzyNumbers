@@ -45,11 +45,13 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
 
+Other deffuzification: \code{\link{value}},
+  \code{\link{weightedExpectedValue}}
+
 Other characteristics: \code{\link{ambiguity}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
-
-Other deffuzification: \code{\link{value}},
-  \code{\link{weightedExpectedValue}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{characteristics}
+\concept{deffuzification}

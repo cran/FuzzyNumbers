@@ -90,6 +90,8 @@ preserving the expected interval,
 Fuzzy Sets and Systems 159, pp. 1345-1353.
 }
 \seealso{
+Other approximation: \code{\link{piecewiseLinearApproximation}}
+
 Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{FuzzyNumber-class}},
   \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
@@ -107,7 +109,6 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{plot}}, \code{\link{show}},
   \code{\link{supp}}, \code{\link{value}},
   \code{\link{weightedExpectedValue}}, \code{\link{width}}
-
-Other approximation: \code{\link{piecewiseLinearApproximation}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{approximation}

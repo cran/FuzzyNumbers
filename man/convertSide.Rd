@@ -29,4 +29,4 @@ The function works for x1<x2 and x1>x2.
 Other auxiliary: \code{\link{approxInvert}},
   \code{\link{convertAlpha}}
 }
-
+\concept{auxiliary}

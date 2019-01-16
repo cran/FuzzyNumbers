@@ -3,10 +3,10 @@
 \docType{methods}
 \name{Extract}
 \alias{Extract}
-\alias{[,DiscontinuousFuzzyNumber,character-method}
 \alias{[,FuzzyNumber,character-method}
 \alias{[,PiecewiseLinearFuzzyNumber,character-method}
 \alias{[,PowerFuzzyNumber,character-method}
+\alias{[,DiscontinuousFuzzyNumber,character-method}
 \title{FuzzyNumber Slot Accessors}
 \usage{
 \S4method{[}{FuzzyNumber,character}(x, i)
@@ -36,4 +36,7 @@ A <- FuzzyNumber(1,2,3,4)
 A["a1"]
 A["right"]
 }
-
+\concept{DiscontinuousFuzzyNumber,character-method}
+\concept{FuzzyNumber,character-method}
+\concept{PiecewiseLinearFuzzyNumber,character-method}
+\concept{PowerFuzzyNumber,character-method}

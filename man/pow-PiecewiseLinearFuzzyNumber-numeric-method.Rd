@@ -34,6 +34,9 @@ KAUFMANN, A., GUPTA, M. M. (1985) Introduction to Fuzzy Arithmetic.
 New York : Van Nostrand Reinhold Company. ISBN 044230079.
 }
 \seealso{
+Other extension_principle: \code{\link{Arithmetic}},
+  \code{\link{fapply}}
+
 Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{PiecewiseLinearFuzzyNumber-class}},
   \code{\link{PiecewiseLinearFuzzyNumber}},
@@ -52,8 +55,6 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictExceedance}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
-
-Other extension_principle: \code{\link{Arithmetic}},
-  \code{\link{fapply}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{extension_principle}

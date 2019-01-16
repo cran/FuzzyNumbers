@@ -5,8 +5,8 @@
 \alias{as.character}
 \alias{as.character,FuzzyNumber-method}
 \alias{as.character,PiecewiseLinearFuzzyNumber-method}
-\alias{as.character,PowerFuzzyNumber-method}
 \alias{as.character,TrapezoidalFuzzyNumber-method}
+\alias{as.character,PowerFuzzyNumber-method}
 \title{Get Basic Information on a Fuzzy Number in a String}
 \usage{
 \S4method{as.character}{FuzzyNumber}(x, toLaTeX=FALSE, varnameLaTeX="A")
@@ -88,4 +88,8 @@ Other conversion: \code{\link{as.FuzzyNumber}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{PowerFuzzyNumber-method}
+\concept{TriangularFuzzyNumber-method}
+\concept{conversion}

@@ -3,10 +3,10 @@
 \docType{methods}
 \name{plot}
 \alias{plot}
-\alias{plot,DiscontinuousFuzzyNumber,missing-method}
 \alias{plot,FuzzyNumber,missing-method}
-\alias{plot,PiecewiseLinearFuzzyNumber,missing-method}
 \alias{plot,TrapezoidalFuzzyNumber,missing-method}
+\alias{plot,PiecewiseLinearFuzzyNumber,missing-method}
+\alias{plot,DiscontinuousFuzzyNumber,missing-method}
 \title{Plot a Fuzzy Number}
 \usage{
 \S4method{plot}{FuzzyNumber,missing}(x, y, from=NULL, to=NULL, n=101, at.alpha=NULL,
@@ -95,10 +95,6 @@ plot(FuzzyNumber(0,1,2,3, left=function(x) x^2, right=function(x) 1-x^3), add=TR
 plot(FuzzyNumber(0,1,2,3, lower=function(x) x, upper=function(x) 1-x), add=TRUE, col=2)
 }
 \seealso{
-Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
-  \code{\link{DiscontinuousFuzzyNumber}},
-  \code{\link{distance}}, \code{\link{integrateAlpha}}
-
 Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{FuzzyNumber-class}},
   \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
@@ -147,5 +143,12 @@ Other TrapezoidalFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{as.PowerFuzzyNumber}},
   \code{\link{as.TrapezoidalFuzzyNumber}},
   \code{\link{expectedInterval}}
-}
 
+Other DiscontinuousFuzzyNumber-method: \code{\link{DiscontinuousFuzzyNumber-class}},
+  \code{\link{DiscontinuousFuzzyNumber}},
+  \code{\link{distance}}, \code{\link{integrateAlpha}}
+}
+\concept{DiscontinuousFuzzyNumber-method}
+\concept{FuzzyNumber-method}
+\concept{PiecewiseLinearFuzzyNumber-method}
+\concept{TrapezoidalFuzzyNumber-method}

@@ -38,6 +38,7 @@ To convert the former to the latter, call \code{\link{as.PiecewiseLinearFuzzyNum
 
 Class \code{\linkS4class{FuzzyNumber}}, directly.
 }
+
 \examples{
 showClass("PiecewiseLinearFuzzyNumber")
 showMethods(classes="PiecewiseLinearFuzzyNumber")
@@ -66,4 +67,4 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}

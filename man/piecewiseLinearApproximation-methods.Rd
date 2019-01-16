@@ -80,6 +80,8 @@ Nearest Piecewise Linear Approximation of Fuzzy Numbers - General Case,
  submitted for publication.
 }
 \seealso{
+Other approximation: \code{\link{trapezoidalApproximation}}
+
 Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{FuzzyNumber-class}},
   \code{\link{FuzzyNumber}}, \code{\link{alphaInterval}},
@@ -97,7 +99,6 @@ Other FuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{trapezoidalApproximation}},
   \code{\link{value}}, \code{\link{weightedExpectedValue}},
   \code{\link{width}}
-
-Other approximation: \code{\link{trapezoidalApproximation}}
 }
-
+\concept{FuzzyNumber-method}
+\concept{approximation}

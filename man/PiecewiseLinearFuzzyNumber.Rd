@@ -60,4 +60,4 @@ Other PiecewiseLinearFuzzyNumber-method: \code{\link{Arithmetic}},
   \code{\link{possibilityStrictUndervaluation}},
   \code{\link{possibilityUndervaluation}}
 }
-
+\concept{PiecewiseLinearFuzzyNumber-method}
