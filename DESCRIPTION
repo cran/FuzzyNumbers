@@ -12,9 +12,9 @@ Description: S4 classes and methods
     performing approximation of arbitrary fuzzy numbers by trapezoidal
     and piecewise linear ones, preparing plots for publications, computing
     possibility and necessity values for comparisons, etc.
-Version: 0.4-5
-Date: 2019-01-16
-URL: http://FuzzyNumbers.rexamine.com
+Version: 0.4-6
+Date: 2019-02-05
+URL: http://www.gagolewski.com/software/
 BugReports: http://github.com/gagolews/FuzzyNumbers/issues
 License: LGPL (>= 3)
 ByteCompile: TRUE
@@ -24,9 +24,9 @@ Depends: R (>= 3.0.0), methods, grDevices, graphics, stats
 RoxygenNote: 6.1.1
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2019-01-16 14:02:04 UTC; gagolews
+Packaged: 2019-02-05 16:40:05 UTC; gagolews
 Author: Marek Gagolewski [aut, cre],
   Jan Caha [ctb]
 Maintainer: Marek Gagolewski <gagolews@rexamine.com>
 Repository: CRAN
-Date/Publication: 2019-01-16 15:00:07 UTC
+Date/Publication: 2019-02-05 18:13:20 UTC

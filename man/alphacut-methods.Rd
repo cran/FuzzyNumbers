@@ -4,12 +4,12 @@
 \name{alphacut}
 \alias{alphacut}
 \alias{alphacut,FuzzyNumber,numeric-method}
-\title{Calculate Alpha-Cuts}
+\title{Compute Alpha-Cuts}
 \usage{
 \S4method{alphacut}{FuzzyNumber,numeric}(object, alpha)
 }
 \arguments{
-\item{object}{a fuzzy numbers}
+\item{object}{a fuzzy number}
 
 \item{alpha}{numeric vector with elements in [0,1]}
 }
@@ -19,7 +19,7 @@ if some elements in \code{alpha} are not in [0,1], then \code{NA}
 is set.
 }
 \description{
-If \eqn{A} is a fuzzy numbers, then its \eqn{\alpha}-cuts are
+If \eqn{A} is a fuzzy number, then its \eqn{\alpha}-cuts are
 always in form of intervals.
 Moreover, the \eqn{\alpha}-cuts form a nonincreasing
 chain w.r.t. \eqn{alpha}.

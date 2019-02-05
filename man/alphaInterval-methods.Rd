@@ -7,7 +7,7 @@
 \alias{alphaInterval,TrapezoidalFuzzyNumber-method}
 \alias{alphaInterval,PiecewiseLinearFuzzyNumber-method}
 \alias{alphaInterval,PowerFuzzyNumber-method}
-\title{Calculate the Alpha-Interval of a Fuzzy Number}
+\title{Compute the Alpha-Interval of a Fuzzy Number}
 \usage{
 \S4method{alphaInterval}{FuzzyNumber}(object, ...)
 

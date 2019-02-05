@@ -6,19 +6,19 @@
 \title{Tools to Deal with Fuzzy Numbers}
 \description{
 \pkg{FuzzyNumbers} is an open source (LGPL 3) package for R.
-It provides S4 classes and methods to deal with Fuzzy Numbers.
-The package may be used by the practitioners as well as by the researchers
-in fuzzy numbers theory (e.g. for testing new algorithms,
+It provides S4 classes and methods to deal with fuzzy numbers.
+The package may be used by researchers
+in fuzzy numbers theory (e.g., for testing new algorithms,
 generating numerical examples, preparing figures).
 }
 \details{
-Fuzzy set theory lets us quite intuitively represent
-imprecise or vague information. Fuzzy numbers, which form a particular
-subclass of fuzzy sets of the real line, play a significant role
-in many important theoretical and/or practical considerations.
-This is because we often describe our knowledge about objects
-through numbers, e.g. "I'm about 180 cm tall"
-or "The rocket was launched between 2 and 3 p.m.".
+Fuzzy set theory gives one of many ways (in particular, see Bayesian
+probabilities) to represent imprecise 
+information. Fuzzy numbers form a particular subclass of fuzzy sets
+of the real line. The main idea behind this concept is motivated by
+the observation that people tend to describe their knowledge
+about objects through vague numbers, e.g., "I'm about 180 cm tall" or
+"The event happened between 2 and 3 p.m.".
 
 For the formal definition of a fuzzy number
 please refer to the \code{\linkS4class{FuzzyNumber}} man page.
@@ -40,14 +40,9 @@ as well as their particular types, e.g. trapezoidal and piecewise linear fuzzy n
      \code{\link{piecewiseLinearApproximation}}),
    \item Visualization of FNs (see \code{\link{plot}}, \code{\link{as.character}}),
    \item Basic operations on FNs (see e.g. \code{\link{fapply}} and \link{Arithmetic}),
-   \item Aggregation of FNs **TO DO**,
-   \item Ranking of FNs **TO DO**,
-   \item Random FN generation **TO DO**,
-   \item \dots
+   \item etc.
 }
 
-Please feel free to send any comments and feature requests to the author
-(see his homepage at \url{http://gagolewski.rexamine.com/}).
 
 For a complete list of classes and methods
 call \code{help(package="FuzzyNumbers")}.
@@ -71,7 +66,7 @@ Przemyslaw Grzegorzewski, Lucian Coroianu, and Pablo Villacorta Iglesias
  applications'', agreement UDA-POKL.04.01.01-00-051/10-00.
 }
 \references{
-\pkg{FuzzyNumbers} Homepage, \url{http://FuzzyNumbers.rexamine.com/}.
+\pkg{FuzzyNumbers} Homepage, \url{http://www.gagolewski.com/software/}.
 
 Ban A.I. (2008), Approximation of fuzzy numbers by trapezoidal fuzzy numbers
 preserving the expected interval, Fuzzy Sets and Systems 159, pp. 1327-1344.
@@ -110,7 +105,7 @@ Dubois D., Prade H. (1987b), Fuzzy numbers: An overview, In: Analysis of Fuzzy
 Information. Mathematical Logic, vol. I, CRC Press, pp. 3-39.
 
 Grzegorzewski P. (2010), Algorithms for trapezoidal approximations of fuzzy numbers
-preserving the expected interval, In: Bouchon-Meunier B. et al (Eds.),
+preserving the expected interval, In: Bouchon-Meunier B. et al. (Eds.),
 Foundations of Reasoning Under Uncertainty, Springer, pp. 85-98.
 
 Grzegorzewski P. (1998), Metrics and orders in space of fuzzy numbers,
@@ -133,6 +128,5 @@ preserving the expected interval,
 Fuzzy Sets and Systems 159, pp. 1345-1353.
 }
 \author{
-Marek Gagolewski \email{gagolews@rexamine.com},\cr
- with contributions from Jan Caha
+Marek Gagolewski, with contributions from Jan Caha
 }
