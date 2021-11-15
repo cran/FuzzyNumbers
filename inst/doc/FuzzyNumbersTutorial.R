@@ -1,4 +1,4 @@
-## ----FNver,echo=FALSE,results='asis'-------------------------------------
+## ----FNver,echo=FALSE,results='asis'------------------------------------------
 FNver <- packageDescription("FuzzyNumbers")$Version
 #if (as.integer(substring(FNver, nchar(FNver))) == "0") {
 #   cat("\\DevelopmentVersiontrue\n")
@@ -660,6 +660,7 @@ D <- function(a) distance(A,
 optimize(D, lower=0, upper=1)
 
 ## ----suppcoreplfn1a5,echo=FALSE----------------------------------------
+suppressWarnings({
 par(mar=c(4,4,2,1))
 a <- seq(0, 1, length.out=1001)
 Da <- sapply(a, D)
@@ -670,6 +671,7 @@ points(c(0, 1), Da[c(1,length(a))], pch=16)
 opt <- optimize(D, interval=c(0,1))
 abline(v=opt$minimum, col="grey", lty=3)
 abline(h=opt$objective, col="grey", lty=3)
+})
 
 ## ----compareXY1--------------------------------------------------------
 x = as.PiecewiseLinearFuzzyNumber(TriangularFuzzyNumber(0.2, 1.0, 2.8))
